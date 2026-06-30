@@ -2,6 +2,9 @@ const $ = require('jquery');
 const BaseView = require('./base-view');
 
 const DataService = require('../data-service');
+// Cell-class -> WBbt anatomy term (from the connectome KG curation); falls back to the
+// class name when a term is unknown.
+const WBBT_TERMS = require('../wbbt-terms.json');
 
 class InfoView extends BaseView {
   constructor(model) {
@@ -94,7 +97,8 @@ class InfoView extends BaseView {
       .find('a.wormbase')
       .attr(
         'href',
-        'https://www.wormbase.org/species/all/anatomy_term/' + node
+        'https://www.wormbase.org/species/all/anatomy_term/' +
+          (WBBT_TERMS[node] || node)
       );
 
     this.$container
