@@ -92,7 +92,7 @@ class SearchbarView extends BaseView {
       term.startsWith('BW') ||
       term.startsWith('MU')
     ) {
-      let muscles = this.validNodes
+      let muscles = validNodes
         .filter((n) => DataService.typ(n) == 'b')
         .sort();
 
