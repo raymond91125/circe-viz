@@ -44,12 +44,8 @@ class InfoView extends BaseView {
         this.hide();
       }
     });
-
-
-    $('.open-welcome').click(() => {
-      this.$welcome.show();
-      this.hide();
-    });
+    // The cell-info ".open-welcome" link is handled in HelpView, which routes it
+    // through the welcome controller so the popup is populated and positioned.
   }
 
   show() {
