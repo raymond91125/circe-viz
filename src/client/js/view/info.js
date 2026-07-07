@@ -84,28 +84,20 @@ class InfoView extends BaseView {
     let node = DataService.cellClass(selected[0]);
 
     // Link to WormAtlas (neuron pages by class; body wall muscle -> somatic-muscle page;
-    // other non-neuron categories have no mapped page). Hide when unknown.
+    // other non-neuron categories have no mapped page). Hide the whole line when unknown.
     let atlas =
       WORMATLAS_LINKS[node] || WORMATLAS_LINKS[String(node).toUpperCase()];
-    let $wormatlas = this.$container.find('a.wormatlas');
     if (atlas) {
-      $wormatlas.attr('href', atlas).show();
+      this.$container.find('a.wormatlas').attr('href', atlas);
+      this.$container.find('.wormatlas-line').show();
     } else {
-      $wormatlas.removeAttr('href').hide();
+      this.$container.find('.wormatlas-line').hide();
     }
 
-    // Link to WormBase by WBbt anatomy term (from the connectome KG). Case-insensitive
-    // since DataService.cellClass() casing varies; hide the link when there is no term
-    // rather than producing a broken name-based URL.
+    // WBbt anatomy term (from the connectome KG) for the summary's Anatomy row, which links
+    // to WormBase. Case-insensitive since DataService.cellClass() casing varies; omitted from
+    // the summary when there is no term rather than producing a broken name-based URL.
     let wbbt = WBBT_TERMS[node] || WBBT_TERMS[String(node).toUpperCase()];
-    let $wormbase = this.$container.find('a.wormbase');
-    if (wbbt) {
-      $wormbase
-        .attr('href', 'https://www.wormbase.org/species/all/anatomy_term/' + wbbt)
-        .show();
-    } else {
-      $wormbase.removeAttr('href').hide();
-    }
 
     this.$container
       .find('span.cellname')
