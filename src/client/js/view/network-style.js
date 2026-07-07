@@ -383,6 +383,13 @@ let cystyle = {
       selector: 'edge:loop',
       css: {
         'curve-style': 'bezier',
+        // The base `edge` style sets a small control-point-step-size for the
+        // fan-out of parallel edges; for a self-loop that collapses the arc to
+        // zero size. Restore an explicit loop geometry so intra-class gap
+        // junctions (e.g. AIYL<->AIYR on the collapsed AIY node) render.
+        'control-point-step-size': 40,
+        'loop-direction': '-45deg',
+        'loop-sweep': '-90deg',
         'source-distance-from-node': 0,
         'target-distance-from-node': 0
       }
