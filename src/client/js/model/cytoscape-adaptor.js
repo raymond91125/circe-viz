@@ -38,6 +38,7 @@ ModelPrototype.makeCytoscapeNode = function(nodeId, modelState) {
     o: 'octopamine',
     s: 'serotonin',
     t: 'tyramine',
+    b: 'betaine',
     u: 'unknown',
     n: 'none'
   };

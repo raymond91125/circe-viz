@@ -275,6 +275,9 @@ class DataService {
     if (nt.includes('t')) {
       neurotransmitterDisplayNames.push('tyramine');
     }
+    if (nt.includes('b')) {
+      neurotransmitterDisplayNames.push('betaine');
+    }
     return capitalizeFirstLetter(neurotransmitterDisplayNames.join(', '));
   }
 }
