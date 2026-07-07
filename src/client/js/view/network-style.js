@@ -41,7 +41,7 @@ let cytoscapeColors = {
     octopamine: '#CFACFF',
     serotonin: '#90FFCF',
     tyramine: '#F9D77B',
-    betaine: '#F4A460',
+    betaine: '#D800FC',
     unknown: '#D9D9D9',
     none: '#FFFFFF'
   },
