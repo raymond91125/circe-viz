@@ -1,3 +1,9 @@
+// Cell name -> sexes present in (from the KG). Drives which database (collection) a cell is a
+// valid node of: hermaphrodite cells populate complete/head/tail/unc31 as before; cells present
+// in the male populate the additive 'male' database. Male-only cells never enter the
+// hermaphrodite databases, so those views are unchanged.
+const CELL_SEXES = require('./cell-sexes.json');
+
 class CellInfo {
   constructor() {
     this.isCell = {};
@@ -9,7 +15,7 @@ class CellInfo {
     this.nt = {};
     this.type = {};
     this.emb = {};
-    this.validNodes = { complete: [], head: [], tail: [], unc31: []};
+    this.validNodes = { complete: [], head: [], tail: [], unc31: [], male: [] };
     this.incompleteNodes = {
       complete: [],
       head: [
@@ -79,7 +85,8 @@ class CellInfo {
         'VAn',
         'VDn'
       ],
-      unc31: []
+      unc31: [],
+      male: []
     };
 
     this.cellClassLegacy = {};
@@ -113,24 +120,36 @@ class CellInfo {
     this.emb[cell] = emb;
     this.emb[cls] = this.emb[cls] || emb;
 
-    if (inhead) {
-      this.validNodes['head'].push(cell);
-      this.validNodes['head'].push(cls);
-    }
+    // Cells default to hermaphrodite when absent from the sex map, preserving prior behavior.
+    let sexes = CELL_SEXES[cell] || ['hermaphrodite'];
+    let inHermaphrodite = sexes.indexOf('hermaphrodite') !== -1;
+    let inMale = sexes.indexOf('male') !== -1;
 
-    if (intail) {
-      this.validNodes['tail'].push(cell);
-      this.validNodes['tail'].push(cls);
-    }
-
-    if (!cls.startsWith('BWM')) {
-      if (cell != 'LEGACYBODYWALLMUSCLES') {
-        this.validNodes['complete'].push(cell);
-        this.validNodes['unc31'].push(cell);
+    if (inHermaphrodite) {
+      if (inhead) {
+        this.validNodes['head'].push(cell);
+        this.validNodes['head'].push(cls);
       }
 
-      this.validNodes['complete'].push(cls);
-      this.validNodes['unc31'].push(cls);
+      if (intail) {
+        this.validNodes['tail'].push(cell);
+        this.validNodes['tail'].push(cls);
+      }
+
+      if (!cls.startsWith('BWM')) {
+        if (cell != 'LEGACYBODYWALLMUSCLES') {
+          this.validNodes['complete'].push(cell);
+          this.validNodes['unc31'].push(cell);
+        }
+
+        this.validNodes['complete'].push(cls);
+        this.validNodes['unc31'].push(cls);
+      }
+    }
+
+    if (inMale) {
+      this.validNodes['male'].push(cell);
+      this.validNodes['male'].push(cls);
     }
 
     // Set VCn class info manually, as individual neurons are different.
