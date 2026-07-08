@@ -1328,10 +1328,7 @@
 "R1BR": [
 "male"
 ],
-"R1shL": [
-"male"
-],
-"R1shR": [
+"R1stL": [
 "male"
 ],
 "R1stR": [
@@ -1349,10 +1346,7 @@
 "R2BR": [
 "male"
 ],
-"R2shL": [
-"male"
-],
-"R2shR": [
+"R2stL": [
 "male"
 ],
 "R2stR": [
@@ -1370,13 +1364,10 @@
 "R3BR": [
 "male"
 ],
-"R3shL": [
-"male"
-],
-"R3shR": [
-"male"
-],
 "R3stL": [
+"male"
+],
+"R3stR": [
 "male"
 ],
 "R4AL": [
@@ -1391,7 +1382,7 @@
 "R4BR": [
 "male"
 ],
-"R4shL": [
+"R4stL": [
 "male"
 ],
 "R5AL": [
@@ -1406,13 +1397,10 @@
 "R5BR": [
 "male"
 ],
-"R5shL": [
-"male"
-],
-"R5shR": [
-"male"
-],
 "R5stL": [
+"male"
+],
+"R5stR": [
 "male"
 ],
 "R6AL": [
@@ -1439,9 +1427,6 @@
 "R7BR": [
 "male"
 ],
-"R7shR": [
-"male"
-],
 "R7stL": [
 "male"
 ],
@@ -1460,7 +1445,7 @@
 "R8BR": [
 "male"
 ],
-"R8shR": [
+"R8stR": [
 "male"
 ],
 "R9AL": [
@@ -2031,13 +2016,13 @@
 "dsrR": [
 "male"
 ],
-"e2D": [
+"e2DL": [
 "male"
 ],
-"e2VL": [
+"e2DR": [
 "male"
 ],
-"e2VR": [
+"e2V": [
 "male"
 ],
 "e3D": [
