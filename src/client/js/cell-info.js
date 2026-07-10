@@ -13,6 +13,10 @@ for (let name in RAW_CELL_SEXES) {
   CELL_SEXES[name.toUpperCase()] = RAW_CELL_SEXES[name];
 }
 
+// Nodes (cells + classes, upper-cased) of the Cook 2020 pharyngeal connectome — the additive
+// 'pharynx' database. Populated into validNodes['pharynx'] so those cells are valid there.
+const PHARYNX_CELLS = new Set(require('./pharynx-cells.json'));
+
 class CellInfo {
   constructor() {
     this.isCell = {};
@@ -24,7 +28,7 @@ class CellInfo {
     this.nt = {};
     this.type = {};
     this.emb = {};
-    this.validNodes = { complete: [], head: [], tail: [], unc31: [], male: [] };
+    this.validNodes = { complete: [], head: [], tail: [], unc31: [], male: [], pharynx: [] };
     this.incompleteNodes = {
       complete: [],
       head: [
@@ -95,7 +99,8 @@ class CellInfo {
         'VDn'
       ],
       unc31: [],
-      male: []
+      male: [],
+      pharynx: []
     };
 
     this.cellClassLegacy = {};
@@ -159,6 +164,12 @@ class CellInfo {
     if (inMale) {
       this.validNodes['male'].push(cell);
       this.validNodes['male'].push(cls);
+    }
+
+    // The Cook 2020 pharyngeal connectome (additive 'pharynx' database).
+    if (PHARYNX_CELLS.has(cell)) {
+      this.validNodes['pharynx'].push(cell);
+      this.validNodes['pharynx'].push(cls);
     }
 
     // Set VCn class info manually, as individual neurons are different.
