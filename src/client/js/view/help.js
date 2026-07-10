@@ -64,7 +64,7 @@ class HelpView extends BaseView {
 
     $('#show-welcome').click(() => this.emit('startWelcome'));
 
-    // Cell-info "Click here …about FunCoNN" link. Route through the same welcome
+    // Cell-info "Click here …about CIRCE" link. Route through the same welcome
     // flow as #show-welcome so the popup is populated (setWelcomeContent) and
     // positioned; a bare $('#welcome').show() would reveal an empty box when the
     // welcome had never auto-run (e.g. arriving via a permalink with a selection).

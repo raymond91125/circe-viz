@@ -61,9 +61,9 @@ class Welcome {
       .then(() => {
         // Update and display welcome.
         this.view.help.setWelcomeContent(
-          'FunCoNN (Beta)',
+          'CIRCE',
           [
-            'Welcome to <b>FunCoNN (Beta): <u>Fun</u>ctional <u>Co</u>nnectivity on <u>N</u>ema <u>N</u>ode</b>',
+            'Welcome to <b>CIRCE: <u>C</u>onnectome <u>I</u>ntegration &amp; <u>R</u>easoning for <u>C</u>. <u>E</u>legans</b>',
             '<p>',
             'A browser of functional connectivity measurements of <i>C. elegans</i> overlaid ' +
             'on select connectomics data using <a href="https://nemanode.org/" target="_blank">Nema Node</a>.',

@@ -301,7 +301,7 @@ class InfoView extends BaseView {
     // list spans every KG dataset and is NOT filtered by the visualization's thresholds.
     let header = [
       `# All connections for ${node} in the C. elegans connectome knowledge graph`,
-      '# Source: FunCoNN (neuron-graph) knowledge-graph projection',
+      '# Source: CIRCE (Connectome Integration & Reasoning for C. Elegans) knowledge graph',
       '# Every KG dataset; NOT filtered by this visualization\'s connection thresholds',
       `# Downloaded: ${new Date().toISOString().slice(0, 10)}`
     ].join('\n');
