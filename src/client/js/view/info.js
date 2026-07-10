@@ -13,12 +13,29 @@ const WORMATLAS_LINKS = require('../wormatlas-links.json');
 // excludes the pharyngeal nervous system, so pharyngeal cells otherwise show a misleading "Body".
 const PHARYNGEAL_CELLS = new Set(require('../pharyngeal-cells.json'));
 // Full class-level connectivity from the KG (every dataset, no weight threshold), for the
-// "Connections (knowledge graph)" section. The viz graph only draws connections for the current
-// database at/above its threshold, so this reveals weak edges (e.g. M5->g2R, weight 1, below the
-// default chemical threshold of 3) and edges from KG datasets not in the viz DB. Shape:
+// "All connections in knowledge graph" section. The viz graph only draws connections for the
+// current database at/above its threshold, so this reveals weak edges (e.g. M5->g2R, weight 1,
+// below the default chemical threshold of 3) and edges from KG datasets not in the viz DB. Shape:
 //   {datasets: [id...], conn: {class: {rel: {partner: {datasetCode: weight}}}}}
 // rel: o/i = chemical out/in, e = gap junction (symmetric), fo/fi = functional out/in.
-const KG_CONNECTIONS = require('../kg-connections.json');
+//
+// It's the largest bundled map (~368 KB), and only needed once the info panel opens, so it's
+// split into its own chunk and lazy-loaded on first cell selection (instant on subsequent ones)
+// -- keeping it out of the initial page bundle.
+let KG_CONNECTIONS = null;
+let kgConnectionsLoading = null;
+function loadKgConnections() {
+  if (KG_CONNECTIONS) { return Promise.resolve(KG_CONNECTIONS); }
+  if (!kgConnectionsLoading) {
+    kgConnectionsLoading = import(
+      /* webpackChunkName: "kg-connections" */ '../kg-connections.json'
+    ).then(mod => {
+      KG_CONNECTIONS = mod.default || mod;
+      return KG_CONNECTIONS;
+    });
+  }
+  return kgConnectionsLoading;
+}
 
 // Short human labels for KG dataset ids; unknown ids fall back to a prettified form.
 /* eslint-disable camelcase */
@@ -167,11 +184,21 @@ class InfoView extends BaseView {
     return this._kgUpperIndex[String(node).toUpperCase()];
   }
 
-  // "Connections (knowledge graph)": the cell class's complete connectivity from the KG — every
-  // dataset, no weight threshold — so partners the graph doesn't draw (below-threshold or from a
-  // KG-only dataset) are still visible. Partners group by relation; hover shows datasets + weights.
+  // "All connections in knowledge graph": the cell class's complete connectivity from the KG —
+  // every dataset, no weight threshold — so partners the graph doesn't draw (below-threshold or
+  // from a KG-only dataset) are still visible. Partners group by relation; hover shows datasets +
+  // weights. The map is lazy-loaded (its own chunk), so this fills in asynchronously on the first
+  // cell selection; a token guards against a later selection resolving out of order.
   renderKgConnections(node) {
     let $box = this.$container.find('.kg-connections');
+    $box.empty().hide();
+    this._kgConnNode = node;
+    loadKgConnections().then(() => {
+      if (this._kgConnNode === node) { this.fillKgConnections($box, node); }
+    });
+  }
+
+  fillKgConnections($box, node) {
     let entry = this.kgConnLookup(node);
     if (!entry) { $box.empty().hide(); return; }
 
@@ -199,7 +226,7 @@ class InfoView extends BaseView {
     if (!groups.length) { $box.empty().hide(); return; }
     $box
       .html(
-        '<div class="kg-title">Connections (knowledge graph)</div>' +
+        '<div class="kg-title">All connections in knowledge graph</div>' +
           '<div class="kg-note">All partners across every dataset in the knowledge graph, ' +
           'unfiltered by this view\'s threshold. Hover a partner for datasets and weights.</div>' +
           groups.join('')
