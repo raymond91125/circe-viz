@@ -297,11 +297,19 @@ class InfoView extends BaseView {
     if (!node || !KG_CONNECTIONS) { return; }
     let entry = this.kgConnLookup(node);
     if (!entry) { return; }
+    // Provenance comment lines (# prefix) above the CSV header, noting the source and that the
+    // list spans every KG dataset and is NOT filtered by the visualization's thresholds.
+    let header = [
+      `# All connections for ${node} in the C. elegans connectome knowledge graph`,
+      '# Source: FunCoNN (neuron-graph) knowledge-graph projection',
+      '# Every KG dataset; NOT filtered by this visualization\'s connection thresholds',
+      `# Downloaded: ${new Date().toISOString().slice(0, 10)}`
+    ].join('\n');
     let csv = this.buildKgCsvRows(node, entry)
       .map(row => row.map(csvField).join(','))
       .join('\n');
     let safeName = String(node).replace(/[^A-Za-z0-9._-]/g, '_');
-    downloadTextFile(`${safeName}_kg_connections.csv`, csv, 'text/csv');
+    downloadTextFile(`${safeName}_kg_connections.csv`, `${header}\n${csv}`, 'text/csv');
   }
 
   // Summary of what the database knows about the cell (group): type, neurotransmitter(s),
