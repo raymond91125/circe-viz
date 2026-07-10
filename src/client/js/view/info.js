@@ -74,6 +74,35 @@ const KG_RELATIONS = [
   ['fi', 'Functional input']
 ];
 
+// Relation code -> [connection type, direction] for the CSV export columns.
+const KG_REL_META = {
+  o: ['chemical', 'outgoing'],
+  i: ['chemical', 'incoming'],
+  e: ['gap junction', 'undirected'],
+  fo: ['functional', 'outgoing'],
+  fi: ['functional', 'incoming']
+};
+
+// Quote a CSV field only when it contains a comma, quote, or newline (RFC 4180).
+const csvField = value => {
+  let s = String(value);
+  return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+};
+
+// Trigger a client-side file download from in-memory text (no server round-trip needed --
+// the KG connectivity is already bundled).
+const downloadTextFile = (filename, text, mime) => {
+  let blob = new Blob([text], { type: `${mime};charset=utf-8;` });
+  let url = URL.createObjectURL(blob);
+  let a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+};
+
 class InfoView extends BaseView {
   constructor(model) {
     super();
@@ -110,6 +139,12 @@ class InfoView extends BaseView {
       } else {
         this.hide();
       }
+    });
+
+    // Download the currently-shown class's full KG connectivity as CSV.
+    this.$container.on('click', '.kg-download', e => {
+      e.preventDefault();
+      this.downloadKgConnections();
     });
     // The cell-info ".open-welcome" link is handled in HelpView, which routes it
     // through the welcome controller so the popup is populated and positioned.
@@ -226,12 +261,55 @@ class InfoView extends BaseView {
     if (!groups.length) { $box.empty().hide(); return; }
     $box
       .html(
-        '<div class="kg-title">All connections in knowledge graph</div>' +
+        '<div class="kg-title">All connections in knowledge graph' +
+          '<a class="kg-download" href="#" title="Download every connection listed here ' +
+          '(all datasets, per dataset and weight) as CSV">Download CSV</a></div>' +
           '<div class="kg-note">All partners across every dataset in the knowledge graph, ' +
           'unfiltered by this view\'s threshold. Hover a partner for datasets and weights.</div>' +
           groups.join('')
       )
       .show();
+  }
+
+  // Flatten the shown class's KG connectivity into CSV rows: one row per
+  // (partner, connection type, direction, dataset) with its weight.
+  buildKgCsvRows(node, entry) {
+    let datasets = KG_CONNECTIONS.datasets;
+    let rows = [['reference', 'partner', 'type', 'direction', 'dataset', 'weight']];
+    KG_RELATIONS.forEach(([rel]) => {
+      let partners = entry[rel];
+      if (!partners) { return; }
+      let [type, direction] = KG_REL_META[rel];
+      Object.keys(partners)
+        .sort()
+        .forEach(partner => {
+          let byDs = partners[partner];
+          Object.keys(byDs).forEach(code => {
+            rows.push([node, partner, type, direction, datasets[Number(code)], byDs[code]]);
+          });
+        });
+    });
+    return rows;
+  }
+
+  downloadKgConnections() {
+    let node = this._kgConnNode;
+    if (!node || !KG_CONNECTIONS) { return; }
+    let entry = this.kgConnLookup(node);
+    if (!entry) { return; }
+    // Provenance comment lines (# prefix) above the CSV header, noting the source and that the
+    // list spans every KG dataset and is NOT filtered by the visualization's thresholds.
+    let header = [
+      `# All connections for ${node} in the C. elegans connectome knowledge graph`,
+      '# Source: FunCoNN (neuron-graph) knowledge-graph projection',
+      '# Every KG dataset; NOT filtered by this visualization\'s connection thresholds',
+      `# Downloaded: ${new Date().toISOString().slice(0, 10)}`
+    ].join('\n');
+    let csv = this.buildKgCsvRows(node, entry)
+      .map(row => row.map(csvField).join(','))
+      .join('\n');
+    let safeName = String(node).replace(/[^A-Za-z0-9._-]/g, '_');
+    downloadTextFile(`${safeName}_kg_connections.csv`, `${header}\n${csv}`, 'text/csv');
   }
 
   // Summary of what the database knows about the cell (group): type, neurotransmitter(s),
