@@ -4,9 +4,10 @@
 #
 # Production is the local server (node src/server/index.js) serving dist/ from
 # disk, so a client change is live as soon as dist/ is rebuilt -- no restart is
-# needed for client-only changes. The KG-derived link maps (wbbt-terms.json,
-# cell-sexes.json, wormatlas-links.json, wbbt-labels.json) are compiled INTO the
-# bundle, and `build-prod` bundles the *checked-out* tree, so the one rule that
+# needed for client-only changes. The KG-derived maps (wbbt-terms.json,
+# cell-sexes.json, wormatlas-links.json, wbbt-labels.json, kg-connections.json)
+# are compiled INTO the bundle, and `build-prod` bundles the *checked-out* tree,
+# so the one rule that
 # keeps deploys correct is: build from main, not a feature branch. This script
 # enforces that.
 #

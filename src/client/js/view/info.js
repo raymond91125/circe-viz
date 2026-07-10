@@ -12,6 +12,50 @@ const WORMATLAS_LINKS = require('../wormatlas-links.json');
 // show location "Pharynx": NemaNode's inhead/intail flags are head/tail *ganglia* membership, which
 // excludes the pharyngeal nervous system, so pharyngeal cells otherwise show a misleading "Body".
 const PHARYNGEAL_CELLS = new Set(require('../pharyngeal-cells.json'));
+// Full class-level connectivity from the KG (every dataset, no weight threshold), for the
+// "Connections (knowledge graph)" section. The viz graph only draws connections for the current
+// database at/above its threshold, so this reveals weak edges (e.g. M5->g2R, weight 1, below the
+// default chemical threshold of 3) and edges from KG datasets not in the viz DB. Shape:
+//   {datasets: [id...], conn: {class: {rel: {partner: {datasetCode: weight}}}}}
+// rel: o/i = chemical out/in, e = gap junction (symmetric), fo/fi = functional out/in.
+const KG_CONNECTIONS = require('../kg-connections.json');
+
+// Short human labels for KG dataset ids; unknown ids fall back to a prettified form.
+/* eslint-disable camelcase */
+const KG_DATASET_LABELS = {
+  cook_2019_hermaphrodite: 'Cook 2019 (hermaphrodite)',
+  cook_2019_male: 'Cook 2019 (male)',
+  cook_2020_pharynx: 'Cook 2020 (pharynx)',
+  randi_funconn_unc31: 'Randi 2023 (unc-31)',
+  randi_funconn_wildcp: 'Randi 2023 (wild-type, control)',
+  randi_funconn_wildty: 'Randi 2023 (wild-type)',
+  white_1986_jse: 'White 1986 (JSE)',
+  white_1986_jsh: 'White 1986 (JSH)',
+  white_1986_n2u: 'White 1986 (N2U)',
+  white_1986_whole: 'White 1986 (whole)',
+  witvliet_2020_1: 'Witvliet 2020 (dataset 1)',
+  witvliet_2020_2: 'Witvliet 2020 (dataset 2)',
+  witvliet_2020_3: 'Witvliet 2020 (dataset 3)',
+  witvliet_2020_4: 'Witvliet 2020 (dataset 4)',
+  witvliet_2020_5: 'Witvliet 2020 (dataset 5)',
+  witvliet_2020_6: 'Witvliet 2020 (dataset 6)',
+  witvliet_2020_7: 'Witvliet 2020 (dataset 7)',
+  witvliet_2020_8: 'Witvliet 2020 (dataset 8)'
+};
+/* eslint-enable camelcase */
+
+const kgDatasetLabel = id =>
+  KG_DATASET_LABELS[id] ||
+  id.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+// Relation code -> display heading. Order defines the rendered section order.
+const KG_RELATIONS = [
+  ['o', 'Chemical output'],
+  ['i', 'Chemical input'],
+  ['e', 'Gap junctions'],
+  ['fo', 'Functional output'],
+  ['fi', 'Functional input']
+];
 
 class InfoView extends BaseView {
   constructor(model) {
@@ -108,6 +152,59 @@ class InfoView extends BaseView {
       .html(node);
 
     this.renderSummary(node, wbbt);
+    this.renderKgConnections(node);
+  }
+
+  // Case-insensitive lookup of a node's class entry in the KG connectivity map (KG class names
+  // keep natural case, e.g. "g2"; the viz node casing varies).
+  kgConnLookup(node) {
+    let conn = KG_CONNECTIONS.conn;
+    if (conn[node]) { return conn[node]; }
+    if (!this._kgUpperIndex) {
+      this._kgUpperIndex = {};
+      for (let cls in conn) { this._kgUpperIndex[cls.toUpperCase()] = conn[cls]; }
+    }
+    return this._kgUpperIndex[String(node).toUpperCase()];
+  }
+
+  // "Connections (knowledge graph)": the cell class's complete connectivity from the KG — every
+  // dataset, no weight threshold — so partners the graph doesn't draw (below-threshold or from a
+  // KG-only dataset) are still visible. Partners group by relation; hover shows datasets + weights.
+  renderKgConnections(node) {
+    let $box = this.$container.find('.kg-connections');
+    let entry = this.kgConnLookup(node);
+    if (!entry) { $box.empty().hide(); return; }
+
+    let datasets = KG_CONNECTIONS.datasets;
+    let groups = [];
+    KG_RELATIONS.forEach(([rel, heading]) => {
+      let partners = entry[rel];
+      if (!partners) { return; }
+      let names = Object.keys(partners).sort();
+      let items = names
+        .map(p => {
+          let byDs = partners[p];
+          let detail = Object.keys(byDs)
+            .map(code => `${kgDatasetLabel(datasets[Number(code)])}: ${byDs[code]}`)
+            .join('\n');
+          return `<span class="kg-partner" title="${detail}">${p}</span>`;
+        })
+        .join('');
+      groups.push(
+        `<div class="kg-rel"><span class="kg-rel-label">${heading} (${names.length})</span>` +
+          `<span class="kg-partners">${items}</span></div>`
+      );
+    });
+
+    if (!groups.length) { $box.empty().hide(); return; }
+    $box
+      .html(
+        '<div class="kg-title">Connections (knowledge graph)</div>' +
+          '<div class="kg-note">All partners across every dataset in the knowledge graph, ' +
+          'unfiltered by this view\'s threshold. Hover a partner for datasets and weights.</div>' +
+          groups.join('')
+      )
+      .show();
   }
 
   // Summary of what the database knows about the cell (group): type, neurotransmitter(s),
