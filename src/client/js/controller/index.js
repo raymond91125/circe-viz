@@ -55,6 +55,10 @@ let bindSearchbarEvents = ({ model, view }) => {
     model.updateNetwork();
   });
 
+  // Clicking a partner chip in the cell-info "All connections in knowledge graph" list adds that
+  // cell/class to the graph through the same input pipeline as search.
+  view.info.on('addCell', name => view.searchbar.addInput(name));
+
   view.options.on('closeSettings', () => {
     if (view.searchbar.getInputs().length === 0) {
       view.searchbar.focus();

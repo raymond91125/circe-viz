@@ -633,8 +633,14 @@ $sidenav-padding: 16px;
       border: 1px solid $spacer-color;
       border-radius: 3px;
       background: #f7f7f7;
-      cursor: help;
+      cursor: pointer;
       white-space: nowrap;
+
+      &:hover {
+        background: $background-highlighed;
+        border-color: $link-color;
+        color: $link-color;
+      }
     }
   }
 }

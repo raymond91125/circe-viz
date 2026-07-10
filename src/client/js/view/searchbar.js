@@ -172,6 +172,18 @@ class SearchbarView extends BaseView {
 
     this.$input.val(displayNames.join(', '));
   }
+
+  // Append a single cell/class to the search input and re-run the normal input pipeline (same as
+  // picking an autocomplete suggestion), so it gets added to the graph. No-op if already present.
+  addInput(name) {
+    let display = DataService.getDisplayName(name);
+    if (this.getInputs().includes(String(display).toUpperCase())) {
+      return;
+    }
+    let current = this.$input.val().trim().replace(/,\s*$/, '');
+    let prefix = current === '' ? '' : current + ', ';
+    this.$input.val(prefix + display + ', ').trigger('input');
+  }
 }
 
 module.exports = SearchbarView;

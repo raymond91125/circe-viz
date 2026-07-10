@@ -111,6 +111,15 @@ class InfoView extends BaseView {
         this.hide();
       }
     });
+
+    // Clicking a partner chip in the "All connections in knowledge graph" list adds that
+    // cell/class to the graph (routed to the searchbar input pipeline by the controller).
+    this.$container.on('click', '.kg-partner', e => {
+      let name = $(e.currentTarget).attr('data-cell');
+      if (name) {
+        this.emit('addCell', name);
+      }
+    });
     // The cell-info ".open-welcome" link is handled in HelpView, which routes it
     // through the welcome controller so the popup is populated and positioned.
   }
@@ -214,7 +223,7 @@ class InfoView extends BaseView {
           let detail = Object.keys(byDs)
             .map(code => `${kgDatasetLabel(datasets[Number(code)])}: ${byDs[code]}`)
             .join('\n');
-          return `<span class="kg-partner" title="${detail}">${p}</span>`;
+          return `<span class="kg-partner" data-cell="${p}" title="${detail}">${p}</span>`;
         })
         .join('');
       groups.push(
@@ -228,7 +237,8 @@ class InfoView extends BaseView {
       .html(
         '<div class="kg-title">All connections in knowledge graph</div>' +
           '<div class="kg-note">All partners across every dataset in the knowledge graph, ' +
-          'unfiltered by this view\'s threshold. Hover a partner for datasets and weights.</div>' +
+          'unfiltered by this view\'s threshold. Click a partner to add it to the graph; ' +
+          'hover for datasets and weights.</div>' +
           groups.join('')
       )
       .show();
