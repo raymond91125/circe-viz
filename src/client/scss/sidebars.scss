@@ -589,4 +589,52 @@ $sidenav-padding: 16px;
       color: $text-color;
     }
   }
+
+  // Full KG connectivity (all datasets, no threshold) — hidden until a cell with KG edges loads.
+  .kg-connections {
+    display: none;
+    margin: 14px 0 4px;
+    font-size: 13px;
+    line-height: 16px;
+
+    .kg-title {
+      font-weight: bold;
+      color: $text-subtle;
+      margin-bottom: 4px;
+    }
+
+    .kg-note {
+      color: $text-subtle;
+      font-size: 11px;
+      line-height: 14px;
+      margin-bottom: 8px;
+    }
+
+    .kg-rel {
+      margin-bottom: 8px;
+    }
+
+    .kg-rel-label {
+      display: block;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+
+    .kg-partners {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .kg-partner {
+      display: inline-block;
+      padding: 1px 6px;
+      border: 1px solid $spacer-color;
+      border-radius: 3px;
+      background: #f7f7f7;
+      cursor: help;
+      white-space: nowrap;
+    }
+  }
 }

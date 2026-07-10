@@ -8,7 +8,8 @@ module.exports = {
   },
   extends: 'eslint:recommended',
   parserOptions: {
-    ecmaVersion: 8,
+    // 2020 for dynamic import() (used to lazy-load the KG connectivity chunk in view/info.js).
+    ecmaVersion: 2020,
     ecmaFeatures: {
       impliedScrict: true
     }
