@@ -8,6 +8,10 @@ const WBBT_TERMS = require('../wbbt-terms.json');
 // WBbt term id -> human-readable label (e.g. "WBbt:0003638" -> "MC neuron"), from the KG.
 const WBBT_LABELS = require('../wbbt-labels.json');
 const WORMATLAS_LINKS = require('../wormatlas-links.json');
+// Upper-cased pharyngeal cell names + classes (WBbt is_a "pharyngeal cell"), from the KG. Used to
+// show location "Pharynx": NemaNode's inhead/intail flags are head/tail *ganglia* membership, which
+// excludes the pharyngeal nervous system, so pharyngeal cells otherwise show a misleading "Body".
+const PHARYNGEAL_CELLS = new Set(require('../pharyngeal-cells.json'));
 
 class InfoView extends BaseView {
   constructor(model) {
@@ -132,8 +136,9 @@ class InfoView extends BaseView {
     }
 
     let locations = [];
-    if (DataService.exists(node, 'head')) { locations.push('Head'); }
-    if (DataService.exists(node, 'tail')) { locations.push('Tail'); }
+    if (PHARYNGEAL_CELLS.has(String(node).toUpperCase())) { locations.push('Pharynx'); }
+    if (DataService.exists(node, 'head')) { locations.push('Head ganglia'); }
+    if (DataService.exists(node, 'tail')) { locations.push('Tail ganglia'); }
     if (!locations.length && DataService.exists(node, 'complete')) {
       locations.push('Body');
     }
