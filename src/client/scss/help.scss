@@ -91,6 +91,20 @@
       padding: 10px 10px 6px 15px;
     }
 
+    // Flag on a data source that is in the knowledge graph but not shown in this visualization.
+    .source-flag {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 1px 7px;
+      font-size: 12px;
+      font-weight: 400;
+      vertical-align: middle;
+      border: 1px solid #b0b0b0;
+      border-radius: 10px;
+      color: #666;
+      background: #f0f0f0;
+    }
+
     .download-dataset div {
       padding: 3px 0px;
     }
