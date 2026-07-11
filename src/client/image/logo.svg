@@ -1,29 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 71" role="img" aria-label="CIRCE">
   <title>CIRCE — Connectome Integration &amp; Reasoning for C. elegans</title>
-  <!-- Two C. elegans (male, blue, with fan tail; hermaphrodite, slate) chasing tails to form a circle -->
-  <g fill="none" stroke-linecap="round">
-    <g stroke="#4498ef">
-      <path d="M15.32,39.65 A21,21 0 0 1 18.08,46.94" stroke-width="11"/>
-      <path d="M18.08,46.94 A21,21 0 0 1 23.33,52.75" stroke-width="9.5"/>
-      <path d="M23.33,52.75 A21,21 0 0 1 30.30,56.21" stroke-width="8"/>
-      <path d="M30.30,56.21 A21,21 0 0 1 38.09,56.90" stroke-width="6.5"/>
-      <path d="M38.09,56.90 A21,21 0 0 1 45.57,54.69" stroke-width="5"/>
-      <path d="M45.57,54.69 A21,21 0 0 1 51.75,49.89" stroke-width="3.5"/>
-      <path d="M51.75,49.89 A21,21 0 0 1 55.73,43.18" stroke-width="2.2"/>
-      <path d="M55.73,43.18 L61.8,40.6 M56.5,44.6 L62.8,44.4 M55.6,46.0 L60.3,48.6" stroke-width="1.4"/>
-    </g>
-    <g stroke="#34495e">
-      <path d="M56.68,32.35 A21,21 0 0 1 53.92,25.06" stroke-width="11"/>
-      <path d="M53.92,25.06 A21,21 0 0 1 48.67,19.25" stroke-width="9.5"/>
-      <path d="M48.67,19.25 A21,21 0 0 1 41.70,15.79" stroke-width="8"/>
-      <path d="M41.70,15.79 A21,21 0 0 1 33.91,15.10" stroke-width="6.5"/>
-      <path d="M33.91,15.10 A21,21 0 0 1 26.43,17.31" stroke-width="5"/>
-      <path d="M26.43,17.31 A21,21 0 0 1 20.25,22.11" stroke-width="3.5"/>
-      <path d="M20.25,22.11 A21,21 0 0 1 16.27,28.82" stroke-width="2.2"/>
-    </g>
+  <!-- Connectome glyph: a ring of neurons wired around and across (chords = chained connections) -->
+  <g fill="none" stroke="#c3ccd6" stroke-width="1.4">
+    <!-- ring (octagon) -->
+    <polygon points="58,35.5 51.3,51.8 35,58.5 18.7,51.8 12,35.5 18.7,19.2 35,12.5 51.3,19.2" />
   </g>
-  <circle cx="19.2" cy="42.6" r="2" fill="#ffffff"/>
-  <circle cx="52.8" cy="29.4" r="2" fill="#ffffff"/>
-  <text x="80" y="42" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="0.5" fill="#34495e">CIRCE</text>
-  <text x="81" y="57" font-family="Helvetica, Arial, sans-serif" font-size="8.5" font-style="italic" letter-spacing="0.3" fill="#8a97a6">C. elegans connectome KG</text>
+  <g stroke="#4498ef" stroke-width="1.8" stroke-linecap="round">
+    <!-- chords: multi-hop / chained connections -->
+    <line x1="58" y1="35.5" x2="18.7" y2="51.8" />
+    <line x1="35" y1="58.5" x2="35" y2="12.5" />
+    <line x1="51.3" y1="51.8" x2="18.7" y2="19.2" />
+  </g>
+  <g fill="#34495e">
+    <circle cx="58" cy="35.5" r="3.3" />
+    <circle cx="51.3" cy="51.8" r="3.3" />
+    <circle cx="35" cy="58.5" r="3.3" />
+    <circle cx="18.7" cy="51.8" r="3.3" />
+    <circle cx="12" cy="35.5" r="3.3" />
+    <circle cx="18.7" cy="19.2" r="3.3" />
+    <circle cx="35" cy="12.5" r="3.3" />
+    <circle cx="51.3" cy="19.2" r="3.3" />
+  </g>
+  <circle cx="35" cy="35.5" r="3.6" fill="#4498ef" />
+  <!-- Wordmark -->
+  <text x="76" y="42" font-family="Helvetica, Arial, sans-serif" font-size="30"
+        font-weight="700" letter-spacing="0.5" fill="#34495e">CIRCE</text>
+  <text x="78" y="57" font-family="Helvetica, Arial, sans-serif" font-size="8.5"
+        font-style="italic" letter-spacing="0.3" fill="#8a97a6">C. elegans connectome KG</text>
 </svg>
