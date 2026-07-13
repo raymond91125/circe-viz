@@ -44,7 +44,6 @@ const KG_DATASET_LABELS = {
   cook_2019_male: 'Cook 2019 (male)',
   cook_2020_pharynx: 'Cook 2020 (pharynx)',
   randi_funconn_unc31: 'Randi 2023 (unc-31)',
-  randi_funconn_wildcp: 'Randi 2023 (wild-type, control)',
   randi_funconn_wildty: 'Randi 2023 (wild-type)',
   white_1986_jse: 'White 1986 (JSE)',
   white_1986_jsh: 'White 1986 (JSH)',
