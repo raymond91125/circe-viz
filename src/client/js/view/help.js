@@ -26,6 +26,13 @@ class HelpView extends BaseView {
     this.$welcomeTitle = this.$welcome.find('h1');
     this.$welcomeBody = this.$welcome.find('.body');
 
+    // The CIRCE SPARQL endpoint is hosted on port 3001 of the same host as the viz.
+    // Resolve the link at runtime so it works whether opened locally or remotely.
+    $('#sparql-console-link').attr(
+      'href',
+      `${window.location.protocol}//${window.location.hostname}:3001/`
+    );
+
     this.mouseOutsideBody = false;
     this.lastPositionLeft = 0;
     this.lastPositionTop = 0;
