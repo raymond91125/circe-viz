@@ -1,0 +1,5040 @@
+[
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "I2L",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "M3L",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "I3",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "MCR",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "NSMR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm3VR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm4VR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "I2L",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "M2L",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "M2R",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "NSMR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "pm4D",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M2L",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M2R",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M5",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "g1AL",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I6",
+    "post": "M4",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "M1",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm5D",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "M2R",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "MCR",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "MI",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "NSMR",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "g1AL",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "M3R",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "g1AR",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "M4",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "M5",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "g1AL",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "M5",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm6VL",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm6VR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MCL",
+    "post": "MCL",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MCR",
+    "post": "MCR",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "MI",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "pm4D",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "NSMR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "NSMR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "e2DR",
+    "post": "e3D",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "e2V",
+    "post": "e3VR",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "e3D",
+    "post": "e3D",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "e3D",
+    "post": "pm1",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "e3VL",
+    "post": "e3VL",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "e3VL",
+    "post": "pm3VL",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "e3VR",
+    "post": "e3VR",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "g1AL",
+    "post": "g1AL",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "g1AR",
+    "post": "g1AR",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm1",
+    "post": "pm1",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm3VR",
+    "post": "pm3VR",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm4D",
+    "post": "pm4D",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm4VL",
+    "post": "pm4VL",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm4VR",
+    "post": "pm4VR",
+    "typ": 2,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm5D",
+    "post": "pm5D",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm5VL",
+    "post": "pm5VL",
+    "typ": 2,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "pm5VR",
+    "post": "pm5VR",
+    "typ": 2,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "I3",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "MCR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "pm1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "pm3VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1L",
+    "post": "pm4VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "I2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "I3",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "M1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "M2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "MCR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm1",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm3D",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm3VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm4VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I1R",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "I1L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "I2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "I6",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "M1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "e3VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "pm3VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "pm4VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2L",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "I1R",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "M1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "M2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "e3VR",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "pm1",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "pm3VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "pm4VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I2R",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "I1L",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "I1R",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "M1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "M2R",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "MCR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I3",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "I2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "pm4VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I4",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "I1L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "I1R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "I2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "I3",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "M5",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "MCR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "bm",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "g1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "g1AL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "g1AR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I5",
+    "post": "pm6VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I6",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I6",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I6",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I6",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I6",
+    "post": "g1P",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "I6",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "I1R",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "I2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "I3",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "M5",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "e3D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "e3VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "g1P",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm2D",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm2VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm2VR",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm3VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M1",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "I3",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "g1AL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "pm4VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2L",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "g1AR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "pm4VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M2R",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "pm4VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3L",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "I1L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "MI",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "bm",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "g1",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "g1AR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M3R",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "g1AL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "g1AR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "g1P",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "g2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "pm4VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M4",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "M1",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "g1AL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "g1AR",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "g2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "g2R",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "mc3V",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm6D",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm6VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm6VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm7D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm7VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "M5",
+    "post": "pm7VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MCL",
+    "post": "mc2DR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MCL",
+    "post": "mc2V",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MCR",
+    "post": "mc2DL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MCR",
+    "post": "mc2DR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MCR",
+    "post": "mc2V",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "I1L",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "I3",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "M1",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "M2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "M2R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "MCL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "pm4VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "pm4VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "MI",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "I2R",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "I5",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "M3L",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "M4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "NSML",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "NSMR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "bm",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "pm4VL",
+    "typ": 0,
+    "syn": [
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSML",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "I2L",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "I4",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "I6",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "M3R",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "bm",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "pm4D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "pm5D",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "pm5VL",
+    "typ": 0,
+    "syn": [
+      1,
+      1
+    ]
+  },
+  {
+    "datasetId": "cook_2020_pharynx",
+    "pre": "NSMR",
+    "post": "pm5VR",
+    "typ": 0,
+    "syn": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+]

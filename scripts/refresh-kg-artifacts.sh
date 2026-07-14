@@ -10,7 +10,10 @@
 # stale before (e.g. cell-sexes marking pharyngeal cells male-only after the pharynx data landed).
 #
 # It runs `cckg export` in the KG repo, then copies each generated map into src/client/js/ under
-# the client's naming. Review the diff, commit, then `npm run deploy`.
+# the client's naming. It then runs sync-kg-db-sources.js to regenerate the server DB's KG-derived
+# raw-data (cells + the Cook male/pharynx connections + dataset entries) so `npm run
+# populate-database` reproduces the full connectome DB. Review the diff, commit, then
+# `npm run deploy` (client maps) and/or `npm run populate-database` (raw-data).
 #
 # Usage:
 #   sh scripts/refresh-kg-artifacts.sh                 # export from the KG repo, then copy
@@ -64,7 +67,9 @@ for pair in $maps; do
   fi
 done
 
-echo "==> Done. $changed map(s) changed."
-if [ "$changed" -gt 0 ]; then
-  echo "    Review 'git diff', commit, then 'npm run deploy'."
-fi
+echo "==> Syncing server DB sources (cells + Cook connections/datasets) from the KG"
+KG_REPO="$kg_repo" node "$ng_root/scripts/sync-kg-db-sources.js"
+
+echo "==> Done. $changed client map(s) changed."
+echo "    Review 'git diff'. For client-map changes: commit, then 'npm run deploy'."
+echo "    For DB-source changes (raw-data/): commit, then 'npm run populate-database'."
