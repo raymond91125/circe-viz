@@ -276,5 +276,14 @@
     "visualTime": 50,
     "description": "Pharyngeal connectome, Cook et al. 2020 (J Comp Neurol 528:2767-2784).",
     "datatypes": "cs,gj"
+  },
+  {
+    "id": "pharynx_coupled",
+    "type": "pharynxCoupled",
+    "name": "Pharynx (2020) + (1976 gap junctions)",
+    "time": 50,
+    "visualTime": 50,
+    "datatypes": "cs,gj",
+    "description": "Observed Cook 2020 pharyngeal connectome plus the pharyngeal muscle/marginal gap junctions from Cook 2019 (electrical coupling, Albertson & Thomson 1976). Visualization only - not part of the observed knowledge graph."
   }
 ]

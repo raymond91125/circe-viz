@@ -17,6 +17,14 @@ for (let name in RAW_CELL_SEXES) {
 // 'pharynx' database. Populated into validNodes['pharynx'] so those cells are valid there.
 const PHARYNX_CELLS = new Set(require('./pharynx-cells.json'));
 
+// Node set for the viz-only 'Pharynx + inferred muscle coupling' database (pharynxCoupled):
+// the pharynx nodes plus the muscle/marginal cells that appear ONLY in the added coupling
+// (mc1, dorsal mc3, and the monocellular pm8), so those gap junctions have valid endpoints.
+const PHARYNX_COUPLED_CELLS = new Set([
+  ...PHARYNX_CELLS,
+  'MC1DL', 'MC1DR', 'MC1V', 'MC3DL', 'MC3DR', 'PM8', 'MC1', 'MC3'
+]);
+
 class CellInfo {
   constructor() {
     this.isCell = {};
@@ -28,7 +36,7 @@ class CellInfo {
     this.nt = {};
     this.type = {};
     this.emb = {};
-    this.validNodes = { complete: [], head: [], tail: [], unc31: [], male: [], pharynx: [] };
+    this.validNodes = { complete: [], head: [], tail: [], unc31: [], male: [], pharynx: [], pharynxCoupled: [] };
     this.incompleteNodes = {
       complete: [],
       head: [
@@ -100,7 +108,8 @@ class CellInfo {
       ],
       unc31: [],
       male: [],
-      pharynx: []
+      pharynx: [],
+      pharynxCoupled: []
     };
 
     this.cellClassLegacy = {};
@@ -170,6 +179,12 @@ class CellInfo {
     if (PHARYNX_CELLS.has(cell)) {
       this.validNodes['pharynx'].push(cell);
       this.validNodes['pharynx'].push(cls);
+    }
+
+    // The viz-only 'Pharynx + inferred muscle coupling' database.
+    if (PHARYNX_COUPLED_CELLS.has(cell)) {
+      this.validNodes['pharynxCoupled'].push(cell);
+      this.validNodes['pharynxCoupled'].push(cls);
     }
 
     // Set VCn class info manually, as individual neurons are different.
