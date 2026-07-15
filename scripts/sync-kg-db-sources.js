@@ -92,11 +92,43 @@ for (const [rel, datasetId] of cookConnFiles) {
   console.log(`connections/${datasetId}.json: ${raw.length} connections`);
 }
 
-// --- Datasets: committed hermaphrodite entries + the two Cook dataset entries -------------------
+// --- Viz-only 'Pharynx + inferred muscle coupling' dataset --------------------------------------
+// cook_2020_pharynx records no muscle/marginal gap junctions (SI3, observed only). This viz-only
+// dataset unions the observed pharynx with the pharyngeal muscle/marginal gap junctions from Cook
+// 2019 (electrical coupling per Albertson & Thomson 1976). The pharynx is not sexually dimorphic,
+// so these gaps are taken from the male projection (identical to the hermaphrodite). NOT part of
+// the observed KG -- it lives only in the viz so the known muscle coupling can be visualised.
+const COUPLED = 'pharynx_coupled'; // dataset id (datasets.id is varchar(20))
+const isPmMc = n => n.startsWith('pm') || n.startsWith('mc');
+const arr = w => Array.from({ length: w }, () => 1);
+const pharynxConns = readJson(need(path.join(KG_OUT, 'neuron-graph-pharynx/connections.json')));
+const maleConns = readJson(need(path.join(KG_OUT, 'neuron-graph-male/connections.json')));
+const coupled = pharynxConns.map(c => ({
+  datasetId: COUPLED, pre: c.pre, post: c.post, typ: TYP_CODE[c.type],
+  syn: arr(c.synapses['cook_2020_pharynx'] || 0)
+}));
+let nGap = 0;
+for (const c of maleConns) {
+  if (c.type !== 'electrical' || !isPmMc(c.pre) || !isPmMc(c.post)) continue;
+  coupled.push({ datasetId: COUPLED, pre: c.pre, post: c.post, typ: 2,
+    syn: arr(c.synapses['cook_2019_male'] || 0) });
+  nGap++;
+}
+fs.writeFileSync(path.join(RAW, 'connections', `${COUPLED}.json`), JSON.stringify(coupled, null, 2) + '\n');
+console.log(`connections/${COUPLED}.json: ${coupled.length} connections (+${nGap} muscle/marginal gaps)`);
+
+// --- Datasets: committed hermaphrodite entries + the two Cook dataset entries + coupled ----------
 const datasetsPath = path.join(RAW, 'datasets.json');
-const existing = readJson(datasetsPath).filter(d => !d.id.startsWith('cook_'));
+const existing = readJson(datasetsPath).filter(d => !d.id.startsWith('cook_') && d.id !== COUPLED);
 const maleDs = readJson(need(path.join(KG_OUT, 'neuron-graph-male/datasets.json')));
 const pharynxDs = readJson(need(path.join(KG_OUT, 'neuron-graph-pharynx/datasets.json')));
-const datasets = [...existing, ...maleDs, ...pharynxDs];
+const coupledDs = {
+  id: COUPLED, type: 'pharynxCoupled', name: 'Cook 2020 pharynx + inferred muscle coupling',
+  time: 50, visualTime: 50, datatypes: 'cs,gj',
+  description: 'Observed Cook 2020 pharyngeal connectome plus the pharyngeal muscle/marginal '
+    + 'gap junctions from Cook 2019 (electrical coupling, Albertson & Thomson 1976). '
+    + 'Visualization only - not part of the observed knowledge graph.'
+};
+const datasets = [...existing, ...maleDs, ...pharynxDs, coupledDs];
 fs.writeFileSync(datasetsPath, JSON.stringify(datasets, null, 2) + '\n');
 console.log(`datasets.json: ${datasets.length} datasets (+${maleDs.length + pharynxDs.length} Cook)`);
