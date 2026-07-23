@@ -361,15 +361,32 @@ $sidenav-padding: 16px;
       background: $spacer-color;
     }
   }
-  /* Dauer is an alternative (non-continuous) life stage folded into the head developmental
-     series; mark it as a solid blue tick (outer frame + inner fill) so it stands out from the
-     normal hollow L1->adult timepoints. */
+  /* Dauer is an alternative larval stage folded into the head developmental series. Its timing
+     is not a precise point on the L1->adult clock, so mark it with a CIRCLE (not a dated pin)
+     centred on the axis, rather than the pin used for the staged timepoints. The standard
+     hollow/filled cue is kept for unselected/selected; blue keeps it visually distinct. The
+     id selector outranks the .bookmark:hover / .bookmark.selected rules, so the circle holds
+     its shape on hover and the selected state still fills it in. */
   #dataset-yim_2024_dauer {
-    .rectangle, .rectangle > div {
-      background: $blue;
+    .triangle {
+      display: none;
     }
-    .triangle, .triangle > div {
-      border-top-color: $blue;
+    .rectangle {
+      background: $blue;
+      border: 0;
+      border-radius: 50%;
+      width: 11px;
+      height: 11px;
+      top: 14px; /* centre the 11px circle on the axis anchor (~20px below the mark top) */
+      > div {
+        background: $background; /* hollow centre when unselected; hidden (solid) when selected */
+        border: 0;
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        top: 2px;
+        left: 2px;
+      }
     }
   }
   .bookmark:hover {
