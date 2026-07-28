@@ -1,5 +1,15 @@
 let sum = arr => arr.reduce((a, b) => a + b, 0);
 
+// Insert `rows` in batches so the bulk INSERT never exceeds MySQL's max_allowed_packet. The
+// connectome grew past a single-statement insert once the predicted neuropeptide network (~125k
+// edges) was added; batching keeps each statement small regardless of dataset size. A no-op for
+// empty inputs (mysql2 rejects `VALUES ?` with an empty array).
+let insertInChunks = async (dbConn, sql, rows, chunkSize = 10000) => {
+  for (let i = 0; i < rows.length; i += chunkSize) {
+    await dbConn.query(sql, [rows.slice(i, i + chunkSize)]);
+  }
+};
+
 let getCell2ClassMap = async dbConn => {
   let [cells, ] = await dbConn.query('SELECT name, class FROM neurons');
 
@@ -41,10 +51,13 @@ let populateConnections = async (dbConn, connectionsJSON) => {
       case 4:
         type = 'functional';
         break;
+      case 5:
+        type = 'neuropeptidergic';
+        break;
       default:
         type = 'undefined';
         break;
-    } 
+    }
 
     let synapseCount = syn.length;
     if (type === 'functional') {
@@ -122,14 +135,16 @@ let populateConnections = async (dbConn, connectionsJSON) => {
   /* eslint-disable no-console */
   console.log('Loading dataset: ' + connectionValues[0]);
   /* eslint-enable no-console */
-  await dbConn.query(
+  await insertInChunks(
+    dbConn,
     'INSERT INTO connections (id, dataset_id, pre, post, type, synapses) VALUES ?',
-    [connectionValues]
+    connectionValues
   );
 
-  await dbConn.query(
+  await insertInChunks(
+    dbConn,
     'INSERT INTO synapses (connection_id, connector_id, weight, pre_tid, post_tid) VALUES ?',
-    [synapses]
+    synapses
   );
 
 };

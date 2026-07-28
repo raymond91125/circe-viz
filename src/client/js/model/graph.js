@@ -10,6 +10,9 @@ class Graph {
     // in functional connections
     this.fdst = new Map();
     this.fsrc = new Map();
+    // preserve direction (src,dst) of predicted neuropeptide signalling
+    this.npdst = new Map();
+    this.npsrc = new Map();
   }
 
   addNode(n, attr = {}) {
@@ -19,7 +22,7 @@ class Graph {
     // * `adj` - data structure for gap junction connections
     // * `fdst` - data structure for one direction of a functional connection
     // * `fsrc` - data structure for the other direction of a functional connection
-    const { node, outp, inp, adj, fdst, fsrc } = this;
+    const { node, outp, inp, adj, fdst, fsrc, npdst, npsrc } = this;
     if (!node.has(n)) {
       node.set(n, attr);
       outp.set(n, new Map());
@@ -27,11 +30,13 @@ class Graph {
       adj.set(n, new Map());
       fdst.set(n, new Map());
       fsrc.set(n, new Map());
+      npdst.set(n, new Map());
+      npsrc.set(n, new Map());
     }
   }
 
   removeNode(n) {
-    const { node, outp, inp, adj, fdst, fsrc } = this;
+    const { node, outp, inp, adj, fdst, fsrc, npdst, npsrc } = this;
     if (!node.has(n)) {
       return;
     }
@@ -57,10 +62,18 @@ class Graph {
       fdst.get(u).delete(n);
     });
     fsrc.delete(n);
+    npdst.get(n).forEach(function(_, u) {
+      npsrc.get(u).delete(n);
+    });
+    npdst.delete(n);
+    npsrc.get(n).forEach(function(_, u) {
+      npdst.get(u).delete(n);
+    });
+    npsrc.delete(n);
   }
 
   isIsolated(n) {
-    const { node, outp, inp, adj, fdst, fsrc } = this;
+    const { node, outp, inp, adj, fdst, fsrc, npdst, npsrc } = this;
     if (!node.has(n)) {
       throw new Error(`${n} is not in the network`);
     }
@@ -69,12 +82,14 @@ class Graph {
       inp.get(n).size === 0 &&
       adj.get(n).size === 0 &&
       fdst.get(n).size === 0 &&
-      fsrc.get(n).size === 0
+      fsrc.get(n).size === 0 &&
+      npdst.get(n).size === 0 &&
+      npsrc.get(n).size === 0
     );
   }
 
   addEdge(u, v, type = 'chemical', attr = {}) {
-    const { outp, inp, adj, fdst, fsrc } = this;
+    const { outp, inp, adj, fdst, fsrc, npdst, npsrc } = this;
     this.addNode(u);
     this.addNode(v);
     if (type == 'chemical') {
@@ -85,12 +100,15 @@ class Graph {
       adj.get(v).set(u, deepCopy(attr));
     } else if (type == 'functional') {
       fdst.get(u).set(v, deepCopy(attr));
-      fsrc.get(v).set(u, deepCopy(attr)); 
+      fsrc.get(v).set(u, deepCopy(attr));
+    } else if (type == 'neuropeptidergic') {
+      npdst.get(u).set(v, deepCopy(attr));
+      npsrc.get(v).set(u, deepCopy(attr));
     }
   }
 
   hasEdge(u, v, type) {
-    const { outp, adj, fdst } = this;
+    const { outp, adj, fdst, npdst } = this;
     if (type == 'chemical') {
       return outp.get(u).has(v);
     }
@@ -100,10 +118,13 @@ class Graph {
     if (type == 'functional') {
       return fdst.get(u).has(v);
     }
+    if (type == 'neuropeptidergic') {
+      return npdst.get(u).has(v);
+    }
   }
 
   getEdge(u, v, type) {
-    const { outp, adj, fdst } = this;
+    const { outp, adj, fdst, npdst } = this;
     if (type == 'chemical') {
       return outp.get(u).get(v);
     }
@@ -113,10 +134,13 @@ class Graph {
     if (type == 'functional') {
       return fdst.get(u).get(v);
     }
+    if (type == 'neuropeptidergic') {
+      return npdst.get(u).get(v);
+    }
   }
 
   removeEdge(u, v, type = 'chemical') {
-    const { outp, inp, adj, fdst, fsrc } = this;
+    const { outp, inp, adj, fdst, fsrc, npdst, npsrc } = this;
     if (type == 'chemical') {
       outp.get(u).delete(v);
       inp.get(v).delete(u);
@@ -126,6 +150,9 @@ class Graph {
     } else if (type == 'functional') {
       fdst.get(u).delete(v);
       fsrc.get(v).delete(u);
+    } else if (type == 'neuropeptidergic') {
+      npdst.get(u).delete(v);
+      npsrc.get(v).delete(u);
     }
   }
 
@@ -134,7 +161,7 @@ class Graph {
   }
 
   edges(type = 'chemical', n) {
-    const { node, outp, inp, adj, fdst, fsrc } = this;
+    const { node, outp, inp, adj, fdst, fsrc, npdst, npsrc } = this;
     let edges = [];
     if (n !== undefined) {
       if (!node.has(n)) {
@@ -158,6 +185,14 @@ class Graph {
           edges.push([n, u, attr]);
         });
         fsrc.get(n).forEach(function(attr, u) {
+          edges.push([u, n, attr]);
+        });
+      }
+      if (type == 'neuropeptidergic') {
+        npdst.get(n).forEach(function(attr, u) {
+          edges.push([n, u, attr]);
+        });
+        npsrc.get(n).forEach(function(attr, u) {
           edges.push([u, n, attr]);
         });
       }
@@ -191,6 +226,12 @@ class Graph {
     } else if (type == 'functional') {
       fdst.forEach(function(_, u) {
         fdst.get(u).forEach(function(attr, v) {
+          edges.push([u, v, attr]);
+        });
+      });
+    } else if (type == 'neuropeptidergic') {
+      npdst.forEach(function(_, u) {
+        npdst.get(u).forEach(function(attr, v) {
           edges.push([u, v, attr]);
         });
       });
