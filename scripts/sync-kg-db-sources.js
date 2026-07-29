@@ -50,7 +50,7 @@ const toRawCell = c => ({
 });
 
 // api connection-type string -> the numeric `typ` code populate-connections.js switches on.
-const TYP_CODE = { chemical: 0, electrical: 2, functional: 4 };
+const TYP_CODE = { chemical: 0, electrical: 2, functional: 4, neuropeptidergic: 5 };
 
 // KG connection (/api/connections aggregated shape: synapses={datasetId: weight}) -> the raw-data
 // connection shape. populate-connections uses syn.length as the (chemical/electrical) synapse
@@ -95,6 +95,23 @@ for (const [rel, datasetId] of cookConnFiles) {
   console.log(`connections/${datasetId}.json: ${raw.length} connections`);
 }
 
+// --- Neuropeptide (Ripoll-Sánchez 2023) predicted network: one raw-data file per range model ----
+// The projection bundles all three range models in one connections.json (synapses keyed by the
+// short viz dataset id). Split per dataset, keeping only edges present (weight > 0) in that model.
+const npDatasets = readJson(need(path.join(KG_OUT, 'neuron-graph-neuropeptide/datasets.json')));
+const npConns = readJson(need(path.join(KG_OUT, 'neuron-graph-neuropeptide/connections.json')));
+for (const ds of npDatasets) {
+  const raw = npConns
+    .filter(c => (c.synapses[ds.id] || 0) > 0)
+    .map(c => toRawConnection(c, ds.id));
+  const out = path.join(RAW, 'connections', `${ds.id}.json`);
+  // The predicted network has ~30-54k edges per range model; write compact (no indent) to keep
+  // these generated seed files from bloating the repo (they regenerate wholesale, so a readable
+  // diff has no value here anyway).
+  fs.writeFileSync(out, JSON.stringify(raw) + '\n');
+  console.log(`connections/${ds.id}.json: ${raw.length} neuropeptide connections`);
+}
+
 // --- Viz-only 'Pharynx + inferred muscle coupling' dataset --------------------------------------
 // cook_2020_pharynx records no muscle/marginal gap junctions (SI3, observed only). This viz-only
 // dataset unions the observed pharynx with the pharyngeal muscle/marginal gap junctions from Cook
@@ -124,7 +141,11 @@ console.log(`connections/${COUPLED}.json: ${coupled.length} connections (+${nGap
 // Strip the KG-derived ids from the committed baseline so re-runs don't double-count them.
 const datasetsPath = path.join(RAW, 'datasets.json');
 const existing = readJson(datasetsPath).filter(
-  d => !d.id.startsWith('cook_') && !d.id.startsWith('yim_') && d.id !== COUPLED
+  d =>
+    !d.id.startsWith('cook_') &&
+    !d.id.startsWith('yim_') &&
+    !d.id.startsWith('ripoll_') &&
+    d.id !== COUPLED
 );
 const maleDs = readJson(need(path.join(KG_OUT, 'neuron-graph-male/datasets.json')));
 const pharynxDs = readJson(need(path.join(KG_OUT, 'neuron-graph-pharynx/datasets.json')));
@@ -136,9 +157,10 @@ const coupledDs = {
     + 'gap junctions from Cook 2019 (electrical coupling, Albertson & Thomson 1976). '
     + 'Visualization only - not part of the observed knowledge graph.'
 };
-const datasets = [...existing, ...maleDs, ...pharynxDs, ...dauerDs, coupledDs];
+const datasets = [...existing, ...maleDs, ...pharynxDs, ...dauerDs, coupledDs, ...npDatasets];
 fs.writeFileSync(datasetsPath, JSON.stringify(datasets, null, 2) + '\n');
 console.log(
   `datasets.json: ${datasets.length} datasets ` +
-    `(+${maleDs.length + pharynxDs.length} Cook, +${dauerDs.length} dauer)`
+    `(+${maleDs.length + pharynxDs.length} Cook, +${dauerDs.length} dauer, ` +
+    `+${npDatasets.length} neuropeptide)`
 );

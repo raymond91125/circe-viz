@@ -118,7 +118,9 @@ ModelPrototype.splitSelected = function() {
           '<br />Gap junctions: ' +
           this.thresholdElectrical +
           '<br />Functional connections: ' +
-          this.thresholdFunctional,
+          this.thresholdFunctional +
+          '<br />Neuropeptide pathways: ' +
+          this.thresholdNeuropeptidergic,
         arr: filteredAfterSplit
       });
     }

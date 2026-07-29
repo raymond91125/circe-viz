@@ -49,6 +49,7 @@ let cytoscapeColors = {
     typ0: 'black',
     typ2: '#666666',
     typ4: '#9900CC',
+    typ5: '#E8820C',
     juvenile: '#2A9EFE',
     mature: '#FF0000',
     'not-classified': '#228B22',
@@ -329,6 +330,29 @@ let cystyle = {
         'line-color': cytoscapeColors.coloursEdge['typ4'],
         'target-arrow-color': cytoscapeColors.coloursEdge['typ4'],
         'source-arrow-color': cytoscapeColors.coloursEdge['typ4'],
+        color: 'black',
+        'control-point-step-size': 20,
+
+        'text-outline-width': 2,
+        'text-outline-color': cytoscapeColors.backgroundColor,
+        'source-distance-from-node': 10,
+        'target-distance-from-node': 10
+      }
+    },
+    {
+      // Neuropeptidergic: predicted extrasynaptic signalling. Dashed + a distinct amber so it
+      // never reads as an observed synapse; directed (target arrow), thinner z-index than wired.
+      selector: 'edge[type = 5]',
+      css: {
+        width: 'data(width)',
+        'font-size': '18px',
+        'z-index': 4,
+        'curve-style': 'bezier',
+        'line-style': 'dashed',
+        'line-dash-pattern': [6, 4],
+        'line-color': cytoscapeColors.coloursEdge['typ5'],
+        'target-arrow-shape': 'triangle',
+        'target-arrow-color': cytoscapeColors.coloursEdge['typ5'],
         color: 'black',
         'control-point-step-size': 20,
 

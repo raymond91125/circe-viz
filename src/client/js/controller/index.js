@@ -97,6 +97,10 @@ let bindOptionsEvents = ({ view, model, controller }) => {
       model.setThresholdFunctional(threshold);
       model.updateNetwork();
     })
+    .on('setThresholdNeuropeptidergic', threshold => {
+      model.setThresholdNeuropeptidergic(threshold);
+      model.updateNetwork();
+    })
     .on('setLayout', layout => {
       let groupMemberPositions = model
         .getGroupMembers()
@@ -475,6 +479,8 @@ class Controller extends EventEmitter {
     let thresholdChemical = state['thresholdChemical'] || 3;
     let thresholdElectrical = state['thresholdElectrical'] || 2;
     let thresholdFunctional = state['thresholdFunctional'] || 2;
+    // Predicted neuropeptide edges are dense; default to >= 3 pathways to keep the view legible.
+    let thresholdNeuropeptidergic = state['thresholdNeuropeptidergic'] || 3;
     let showLinked =
       state['showLinked'] !== undefined ? state['showLinked'] : true;
     let showIndividual =
@@ -497,6 +503,7 @@ class Controller extends EventEmitter {
     view.options.setInput('threshold-chm', thresholdChemical);
     view.options.setInput('threshold-gj', thresholdElectrical);
     view.options.setInput('threshold-fc', thresholdFunctional);
+    view.options.setInput('threshold-np', thresholdNeuropeptidergic);
     view.options.checkOption('show-linked', showLinked);
     view.options.checkOption('show-indiv-cells', showIndividual);
     view.options.checkOption('show-edge-num', showEdgeLabel);
@@ -511,6 +518,7 @@ class Controller extends EventEmitter {
     model.setThresholdChemical(thresholdChemical);
     model.setThresholdElectrical(thresholdElectrical);
     model.setThresholdFunctional(thresholdFunctional);
+    model.setThresholdNeuropeptidergic(thresholdNeuropeptidergic);
     model.setShowLinked(showLinked);
     model.setShowIndividual(showIndividual);
     model.setShowEdgeLabel(showEdgeLabel);

@@ -71,7 +71,8 @@ let queryConnections = async (connection, opts) => {
     includeNeighboringCells,
     thresholdChemical,
     thresholdElectrical,
-    thresholdFunctional
+    thresholdFunctional,
+    thresholdNeuropeptidergic
   } = opts;
 
   // First, get all connections matching the threshold, then fetch the synapse number for these
@@ -87,6 +88,7 @@ let queryConnections = async (connection, opts) => {
           (type = 'chemical' && synapses >= ${thresholdChemical})
           OR (type = 'electrical' && synapses >= ${thresholdElectrical})
           OR (type = 'functional' && ABS(synapses) >= ${thresholdFunctional})
+          OR (type = 'neuropeptidergic' && synapses >= ${thresholdNeuropeptidergic})
         )
       GROUP BY pre, post, type
     ) f
@@ -119,10 +121,14 @@ let queryNematodeConnections = async (connection, opts) => {
     !isNaN(parseInt(opts.thresholdElectrical)) 
       ? opts.thresholdElectrical 
       : 3;
-  let thresholdFunctional = 
-    !isNaN(parseInt(opts.thresholdFunctional)) 
-      ? opts.thresholdFunctional 
+  let thresholdFunctional =
+    !isNaN(parseInt(opts.thresholdFunctional))
+      ? opts.thresholdFunctional
       : 2;
+  let thresholdNeuropeptidergic =
+    !isNaN(parseInt(opts.thresholdNeuropeptidergic))
+      ? opts.thresholdNeuropeptidergic
+      : 3;
   let includeNeighboringCells =
     typeof opts.includeNeighboringCells === 'string'
       ? opts.includeNeighboringCells === 'true'
@@ -163,7 +169,8 @@ let queryNematodeConnections = async (connection, opts) => {
     includeNeighboringCells,
     thresholdChemical,
     thresholdElectrical,
-    thresholdFunctional
+    thresholdFunctional,
+    thresholdNeuropeptidergic
   });
 
   // for each connection, append the number of synapses that each dataset has for that connection
@@ -191,8 +198,14 @@ let queryNematodeConnections = async (connection, opts) => {
   const gapJunctions = connections.filter(c => c.type == 'electrical');
   const chemicalSynapses = connections.filter(c => c.type == 'chemical');
   const functionalSynapses = connections.filter(c => c.type == 'functional');
+  const neuropeptidergic = connections.filter(c => c.type == 'neuropeptidergic');
   const mergedGapJunctions = mergeGapJunctions(gapJunctions);
-  return [...mergedGapJunctions, ...chemicalSynapses, ...functionalSynapses];
+  return [
+    ...mergedGapJunctions,
+    ...chemicalSynapses,
+    ...functionalSynapses,
+    ...neuropeptidergic
+  ];
 };
 
 module.exports = {

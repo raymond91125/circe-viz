@@ -134,6 +134,8 @@ ModelPrototype.makeCytoscapeEdge = function(
         presentEdgeType = 2;
       } else if (dt === 'fc') {
         presentEdgeType = 4;
+      } else if (dt === 'np') {
+        presentEdgeType = 5;
       } else {
         let datasetName = DataService.getDatasetInfo(database, dataset).name;
         throw 'Unknown edge type [' + dt + '] encountered in dataset ' + datasetName;
@@ -170,6 +172,9 @@ ModelPrototype.makeCytoscapeEdge = function(
   } else if (edgeType === 4) {
     // Functional connection
     width = Math.max(1, 2 * Math.pow(Math.abs(meanSyn), 1 / 3) - 2);
+  } else if (edgeType === 5) {
+    // Neuropeptidergic (predicted): weight = number of NPP-GPCR pathways (small ints)
+    width = Math.max(1, 1.5 * Math.pow(Math.abs(meanSyn), 1 / 3));
   }
 
   let label = datasets
@@ -252,6 +257,7 @@ ModelPrototype.convertModelToCytoscape = function(
   const PRE = 0; // Chemical synapse type
   const GJ = 2; // Gap junction type
   const FC = 4; // Functional connection type
+  const NP = 5; // Neuropeptidergic (predicted) type
 
   let {
     input: inputs,
@@ -340,7 +346,10 @@ ModelPrototype.convertModelToCytoscape = function(
             // for some reason we need this as a triple nested array
             chemical: flatten(groupMembers.map(gm => G.edges('chemical', gm))),
             electrical: flatten(groupMembers.map(gm => G.edges('electrical', gm))),
-            functional: flatten(groupMembers.map(gm => G.edges('functional', gm)))
+            functional: flatten(groupMembers.map(gm => G.edges('functional', gm))),
+            neuropeptidergic: flatten(
+              groupMembers.map(gm => G.edges('neuropeptidergic', gm))
+            )
           };
 
           groupMembers.forEach(member => network.removeNode(member));
@@ -425,6 +434,11 @@ ModelPrototype.convertModelToCytoscape = function(
 
   G.edges('functional').forEach(e => {
     let edge = this.makeCytoscapeEdge(e[0], e[1], FC, e[2], modelState);
+    edges[edge['data']['id']] = edge;
+  });
+
+  G.edges('neuropeptidergic').forEach(e => {
+    let edge = this.makeCytoscapeEdge(e[0], e[1], NP, e[2], modelState);
     edges[edge['data']['id']] = edge;
   });
 

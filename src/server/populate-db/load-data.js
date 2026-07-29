@@ -28,11 +28,11 @@ let loadDatasetData = () => {
       d.datatypes = d.datatypes
         .split(',')
         .filter(typestr => {
-          if (typestr !== 'cs' && typestr !== 'gj' && typestr !== 'fc') {
+          if (!['cs', 'gj', 'fc', 'np'].includes(typestr)) {
             /* eslint-disable no-console */
             console.warn(
-              'Invalid datatype:', typestr, 'Must be one of [cs,gj,fc] (i.e. chemical synapse, ',
-              'gap junction, functional connection).  Skipping.'
+              'Invalid datatype:', typestr, 'Must be one of [cs,gj,fc,np] (i.e. chemical synapse,',
+              'gap junction, functional connection, neuropeptide).  Skipping.'
             );
             /* eslint-enable no-console */
             return false;

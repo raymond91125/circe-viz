@@ -51,6 +51,11 @@ ModelPrototype.setThresholdFunctional = function(threshold) {
   this.emit('functionalThresholdChanged', threshold);
 };
 
+ModelPrototype.setThresholdNeuropeptidergic = function(threshold) {
+  this.thresholdNeuropeptidergic = threshold;
+  this.emit('neuropeptidergicThresholdChanged', threshold);
+};
+
 ModelPrototype.setShowLinked = function(checked) {
   this.showLinked = checked;
   this.emit('showLinkedChanged', checked);
