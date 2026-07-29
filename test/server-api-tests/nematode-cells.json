@@ -1650,7 +1650,7 @@
     "name": "CA1",
     "class": "CA1",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1659,7 +1659,7 @@
     "name": "CA2",
     "class": "CA2",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1668,7 +1668,7 @@
     "name": "CA3",
     "class": "CA3",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1677,7 +1677,7 @@
     "name": "CA4",
     "class": "CA4",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1686,7 +1686,7 @@
     "name": "CA5",
     "class": "CA5",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1695,7 +1695,7 @@
     "name": "CA6",
     "class": "CA6",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1704,7 +1704,7 @@
     "name": "CA7",
     "class": "CA7",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1713,7 +1713,7 @@
     "name": "CA8",
     "class": "CA8",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1722,7 +1722,7 @@
     "name": "CA9",
     "class": "CA9",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1767,7 +1767,7 @@
     "name": "CEMDL",
     "class": "CEM",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1776,7 +1776,7 @@
     "name": "CEMDR",
     "class": "CEM",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1785,7 +1785,7 @@
     "name": "CEMVL",
     "class": "CEM",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1794,7 +1794,7 @@
     "name": "CEMVR",
     "class": "CEM",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1872,10 +1872,19 @@
     "intail": false
   },
   {
+    "name": "CP0",
+    "class": "CP0",
+    "type": "i",
+    "neurotransmitter": "l",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
     "name": "CP1",
     "class": "CP1",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1884,7 +1893,7 @@
     "name": "CP2",
     "class": "CP2",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1893,7 +1902,7 @@
     "name": "CP3",
     "class": "CP3",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1902,7 +1911,7 @@
     "name": "CP4",
     "class": "CP4",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1911,7 +1920,7 @@
     "name": "CP5",
     "class": "CP5",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1920,7 +1929,7 @@
     "name": "CP6",
     "class": "CP6",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1929,7 +1938,7 @@
     "name": "CP7",
     "class": "CP7",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1938,7 +1947,7 @@
     "name": "CP8",
     "class": "CP8",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -1947,7 +1956,7 @@
     "name": "CP9",
     "class": "CP9",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "g",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2370,7 +2379,7 @@
     "name": "DX1",
     "class": "DX1",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2379,7 +2388,7 @@
     "name": "DX2",
     "class": "DX2",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2388,7 +2397,16 @@
     "name": "DX3",
     "class": "DX3",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "DX4",
+    "class": "DX4",
+    "type": "i",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2451,7 +2469,7 @@
     "name": "EF1",
     "class": "EF1",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "g",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2460,7 +2478,7 @@
     "name": "EF2",
     "class": "EF2",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "g",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2469,7 +2487,16 @@
     "name": "EF3",
     "class": "EF3",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "g",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "EF4",
+    "class": "EF4",
+    "type": "i",
+    "neurotransmitter": "g",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2477,6 +2504,15 @@
   {
     "name": "exc_cell",
     "class": "exc_cell",
+    "type": "",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
+    "name": "exc_duct",
+    "class": "exc_duct",
     "type": "",
     "neurotransmitter": "u",
     "embryonic": false,
@@ -2676,7 +2712,7 @@
     "name": "HOA",
     "class": "HOA",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -2685,7 +2721,7 @@
     "name": "HOB",
     "class": "HOB",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3234,7 +3270,7 @@
     "name": "PCAL",
     "class": "PCA",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3243,7 +3279,7 @@
     "name": "PCAR",
     "class": "PCA",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3252,7 +3288,7 @@
     "name": "PCBL",
     "class": "PCB",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3261,7 +3297,7 @@
     "name": "PCBR",
     "class": "PCB",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3270,7 +3306,7 @@
     "name": "PCCL",
     "class": "PCC",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3279,7 +3315,7 @@
     "name": "PCCR",
     "class": "PCC",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3306,7 +3342,7 @@
     "name": "PDC",
     "class": "PDC",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3333,7 +3369,7 @@
     "name": "PGA",
     "class": "PGA",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3396,7 +3432,7 @@
     "name": "PHDL",
     "class": "PHD",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3405,7 +3441,7 @@
     "name": "PHDR",
     "class": "PHD",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3828,7 +3864,7 @@
     "name": "PVV",
     "class": "PVV",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3855,7 +3891,7 @@
     "name": "PVX",
     "class": "PVX",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3864,7 +3900,7 @@
     "name": "PVY",
     "class": "PVY",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3873,7 +3909,7 @@
     "name": "PVZ",
     "class": "PVZ",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3882,7 +3918,7 @@
     "name": "R1AL",
     "class": "R1A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3891,7 +3927,7 @@
     "name": "R1AR",
     "class": "R1A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3900,7 +3936,7 @@
     "name": "R1BL",
     "class": "R1B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3909,7 +3945,7 @@
     "name": "R1BR",
     "class": "R1B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3936,7 +3972,7 @@
     "name": "R2AL",
     "class": "R2A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3945,7 +3981,7 @@
     "name": "R2AR",
     "class": "R2A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3954,7 +3990,7 @@
     "name": "R2BL",
     "class": "R2B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3963,7 +3999,7 @@
     "name": "R2BR",
     "class": "R2B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3990,7 +4026,7 @@
     "name": "R3AL",
     "class": "R3A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -3999,7 +4035,7 @@
     "name": "R3AR",
     "class": "R3A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4008,7 +4044,7 @@
     "name": "R3BL",
     "class": "R3B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "s",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4017,7 +4053,7 @@
     "name": "R3BR",
     "class": "R3B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "s",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4044,7 +4080,7 @@
     "name": "R4AL",
     "class": "R4A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4053,7 +4089,7 @@
     "name": "R4AR",
     "class": "R4A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4062,7 +4098,7 @@
     "name": "R4BL",
     "class": "R4B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4071,7 +4107,7 @@
     "name": "R4BR",
     "class": "R4B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4089,7 +4125,7 @@
     "name": "R5AL",
     "class": "R5A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4098,7 +4134,7 @@
     "name": "R5AR",
     "class": "R5A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4107,7 +4143,7 @@
     "name": "R5BL",
     "class": "R5B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4116,7 +4152,7 @@
     "name": "R5BR",
     "class": "R5B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4143,7 +4179,7 @@
     "name": "R6AL",
     "class": "R6A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4152,7 +4188,7 @@
     "name": "R6AR",
     "class": "R6A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4161,7 +4197,7 @@
     "name": "R6BL",
     "class": "R6B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4170,7 +4206,7 @@
     "name": "R6BR",
     "class": "R6B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4179,7 +4215,7 @@
     "name": "R7AL",
     "class": "R7A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "d",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4188,7 +4224,7 @@
     "name": "R7AR",
     "class": "R7A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "d",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4197,7 +4233,7 @@
     "name": "R7BL",
     "class": "R7B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4206,7 +4242,7 @@
     "name": "R7BR",
     "class": "R7B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4233,7 +4269,7 @@
     "name": "R8AL",
     "class": "R8A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4242,7 +4278,7 @@
     "name": "R8AR",
     "class": "R8A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4251,7 +4287,7 @@
     "name": "R8BL",
     "class": "R8B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4260,7 +4296,7 @@
     "name": "R8BR",
     "class": "R8B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4278,7 +4314,7 @@
     "name": "R9AL",
     "class": "R9A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4287,7 +4323,7 @@
     "name": "R9AR",
     "class": "R9A",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "l",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4296,7 +4332,7 @@
     "name": "R9BL",
     "class": "R9B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4305,7 +4341,7 @@
     "name": "R9BR",
     "class": "R9B",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4872,7 +4908,7 @@
     "name": "SPCL",
     "class": "SPC",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4881,7 +4917,7 @@
     "name": "SPCR",
     "class": "SPC",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4917,7 +4953,7 @@
     "name": "SPVL",
     "class": "SPV",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
@@ -4926,7 +4962,7 @@
     "name": "SPVR",
     "class": "SPV",
     "type": "i",
-    "neurotransmitter": "u",
+    "neurotransmitter": "a",
     "embryonic": false,
     "inhead": false,
     "intail": false
