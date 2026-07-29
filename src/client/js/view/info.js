@@ -17,11 +17,12 @@ const PHARYNGEAL_CELLS = new Set(require('../pharyngeal-cells.json'));
 // current database at/above its threshold, so this reveals weak edges (e.g. M5->g2R, weight 1,
 // below the default chemical threshold of 3) and edges from KG datasets not in the viz DB. Shape:
 //   {datasets: [id...], conn: {class: {rel: {partner: {datasetCode: weight}}}}}
-// rel: o/i = chemical out/in, e = gap junction (symmetric), fo/fi = functional out/in.
+// rel: o/i = chemical out/in, e = gap junction (symmetric), fo/fi = functional out/in,
+// npo/npi = predicted neuropeptide out/in.
 //
-// It's the largest bundled map (~368 KB), and only needed once the info panel opens, so it's
-// split into its own chunk and lazy-loaded on first cell selection (instant on subsequent ones)
-// -- keeping it out of the initial page bundle.
+// It's the largest bundled map (~0.8 MB, incl. the predicted neuropeptide network), and only
+// needed once the info panel opens, so it's split into its own chunk and lazy-loaded on first
+// cell selection (instant on subsequent ones) -- keeping it out of the initial page bundle.
 let KG_CONNECTIONS = null;
 let kgConnectionsLoading = null;
 function loadKgConnections() {
@@ -56,7 +57,10 @@ const KG_DATASET_LABELS = {
   witvliet_2020_5: 'Witvliet 2020 (dataset 5)',
   witvliet_2020_6: 'Witvliet 2020 (dataset 6)',
   witvliet_2020_7: 'Witvliet 2020 (dataset 7)',
-  witvliet_2020_8: 'Witvliet 2020 (dataset 8)'
+  witvliet_2020_8: 'Witvliet 2020 (dataset 8)',
+  ripoll_2023_neuropeptide_sr: 'Ripoll-Sánchez 2023 (NP short-range)',
+  ripoll_2023_neuropeptide_mr: 'Ripoll-Sánchez 2023 (NP mid-range)',
+  ripoll_2023_neuropeptide_lr: 'Ripoll-Sánchez 2023 (NP long-range)'
 };
 /* eslint-enable camelcase */
 
@@ -70,7 +74,9 @@ const KG_RELATIONS = [
   ['i', 'Chemical input'],
   ['e', 'Gap junctions'],
   ['fo', 'Functional output'],
-  ['fi', 'Functional input']
+  ['fi', 'Functional input'],
+  ['npo', 'Neuropeptide output (predicted)'],
+  ['npi', 'Neuropeptide input (predicted)']
 ];
 
 // Relation code -> [connection type, direction] for the CSV export columns.
@@ -79,7 +85,9 @@ const KG_REL_META = {
   i: ['chemical', 'incoming'],
   e: ['gap junction', 'undirected'],
   fo: ['functional', 'outgoing'],
-  fi: ['functional', 'incoming']
+  fi: ['functional', 'incoming'],
+  npo: ['neuropeptidergic (predicted)', 'outgoing'],
+  npi: ['neuropeptidergic (predicted)', 'incoming']
 };
 
 // Quote a CSV field only when it contains a comma, quote, or newline (RFC 4180).
