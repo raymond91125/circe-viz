@@ -389,6 +389,35 @@ $sidenav-padding: 16px;
       }
     }
   }
+  /* The three Ripoll-Sánchez predicted neuropeptide range models are all adult, so they sit near
+     white_1986_whole (50) on the shared time axis. They are spread to distinct ticks (51/53/55) and
+     marked with an amber CIRCLE (matching the dashed amber np edge colour) so the predicted trio is
+     visually distinct from the observed grey pins and individually selectable. Hollow/filled keeps
+     the standard unselected/selected cue, as for the dauer circle. */
+  #dataset-ripoll_2023_np_sr,
+  #dataset-ripoll_2023_np_mr,
+  #dataset-ripoll_2023_np_lr {
+    .triangle {
+      display: none;
+    }
+    .rectangle {
+      background: #e8820c; /* neuropeptide (predicted) — matches $edge-colors typ5 */
+      border: 0;
+      border-radius: 50%;
+      width: 11px;
+      height: 11px;
+      top: 14px; /* centre the 11px circle on the axis anchor (~20px below the mark top) */
+      > div {
+        background: $background; /* hollow centre when unselected; hidden (solid) when selected */
+        border: 0;
+        border-radius: 50%;
+        width: 7px;
+        height: 7px;
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
   .bookmark:hover {
     .mark > .rectangle {
       border-radius: 0px;
