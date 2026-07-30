@@ -49,6 +49,7 @@ if [ -d "$KG_OUT" ]; then
         wormatlas_links.json:wormatlas-links.json \
         pharyngeal_cells.json:pharyngeal-cells.json \
         pharynx_cells.json:pharynx-cells.json \
+        np_cells.json:np-cells.json \
         cell_sexes.json:cell-sexes.json \
         kg_connections.json:kg-connections.json; do
         src="$KG_OUT/${pair%%:*}"

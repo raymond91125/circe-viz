@@ -3,7 +3,8 @@
 # Refresh the KG-derived maps bundled into the FunCoNN client from the knowledge graph.
 #
 # These maps -- cell classes' WBbt anatomy terms/labels, WormAtlas links, cell sexes, the
-# pharynx-database node set, WBbt "pharyngeal cell" set, and the full KG connectivity -- are
+# pharynx-database and neuropeptide-database node sets, WBbt "pharyngeal cell" set, and the full
+# KG connectivity -- are
 # COMPILED INTO the client bundle (see view/info.js, cell-info.js). So whenever the KG changes,
 # they must be regenerated and committed, or the viz silently drifts from the KG. This script
 # makes that one command instead of a manual per-file copy, which is how the committed maps went
@@ -34,6 +35,7 @@ anatomy_labels.json:wbbt-labels.json
 wormatlas_links.json:wormatlas-links.json
 pharyngeal_cells.json:pharyngeal-cells.json
 pharynx_cells.json:pharynx-cells.json
+np_cells.json:np-cells.json
 cell_sexes.json:cell-sexes.json
 kg_connections.json:kg-connections.json
 "
