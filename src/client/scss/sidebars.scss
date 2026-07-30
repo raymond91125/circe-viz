@@ -218,7 +218,14 @@ $sidenav-padding: 16px;
     position: absolute;
     width: 100%;
     background-color: $background;
-    z-index: 1;
+    // The database list grew (10 entries), so it must read as a floating overlay above the
+    // sections below (e.g. "Connections have at least") rather than crowding them: lift it well
+    // above sibling content, cap its height so it never runs off the sidebar, and add a shadow so
+    // the layering is unambiguous.
+    z-index: 40;
+    max-height: 60vh;
+    overflow-y: auto;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
 
 
     > div {
