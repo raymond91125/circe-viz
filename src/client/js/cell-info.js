@@ -25,6 +25,11 @@ const PHARYNX_COUPLED_CELLS = new Set([
   'MC1DL', 'MC1DR', 'MC1V', 'MC3DL', 'MC3DR', 'PM8', 'MC1', 'MC3'
 ]);
 
+// Nodes (cells + classes, upper-cased) of the predicted Ripoll-Sánchez 2023 neuropeptide network,
+// from the KG. The three range models share the same neurons, so this one set populates all three
+// neuropeptide databases (np_sr/np_mr/np_lr).
+const NP_CELLS = new Set(require('./np-cells.json'));
+
 class CellInfo {
   constructor() {
     this.isCell = {};
@@ -36,7 +41,10 @@ class CellInfo {
     this.nt = {};
     this.type = {};
     this.emb = {};
-    this.validNodes = { complete: [], head: [], tail: [], unc31: [], male: [], pharynx: [], pharynxCoupled: [] };
+    this.validNodes = {
+      complete: [], head: [], tail: [], unc31: [], male: [], pharynx: [], pharynxCoupled: [],
+      np_sr: [], np_mr: [], np_lr: []
+    };
     this.incompleteNodes = {
       complete: [],
       head: [
@@ -109,7 +117,10 @@ class CellInfo {
       unc31: [],
       male: [],
       pharynx: [],
-      pharynxCoupled: []
+      pharynxCoupled: [],
+      np_sr: [],
+      np_mr: [],
+      np_lr: []
     };
 
     this.cellClassLegacy = {};
@@ -185,6 +196,14 @@ class CellInfo {
     if (PHARYNX_COUPLED_CELLS.has(cell)) {
       this.validNodes['pharynxCoupled'].push(cell);
       this.validNodes['pharynxCoupled'].push(cls);
+    }
+
+    // The three predicted-neuropeptide databases share the same neurons.
+    if (NP_CELLS.has(cell)) {
+      ['np_sr', 'np_mr', 'np_lr'].forEach(db => {
+        this.validNodes[db].push(cell);
+        this.validNodes[db].push(cls);
+      });
     }
 
     // Set VCn class info manually, as individual neurons are different.

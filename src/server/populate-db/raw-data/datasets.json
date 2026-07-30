@@ -298,27 +298,27 @@
   {
     "id": "ripoll_2023_np_sr",
     "name": "Ripoll-Sánchez 2023 (NP short-range, predicted)",
-    "type": "complete",
-    "time": 51,
-    "visualTime": 51,
+    "type": "np_sr",
+    "time": 50,
+    "visualTime": 50,
     "description": "Predicted short-range neuropeptidergic connectome, Ripoll-Sánchez et al. 2023 (Neuron 111:3570-3589). Extrasynaptic — not observed synapses.",
     "datatypes": "np"
   },
   {
     "id": "ripoll_2023_np_mr",
     "name": "Ripoll-Sánchez 2023 (NP mid-range, predicted)",
-    "type": "complete",
-    "time": 53,
-    "visualTime": 53,
+    "type": "np_mr",
+    "time": 50,
+    "visualTime": 50,
     "description": "Predicted mid-range neuropeptidergic connectome, Ripoll-Sánchez et al. 2023 (Neuron 111:3570-3589). Extrasynaptic — not observed synapses.",
     "datatypes": "np"
   },
   {
     "id": "ripoll_2023_np_lr",
     "name": "Ripoll-Sánchez 2023 (NP long-range, predicted)",
-    "type": "complete",
-    "time": 55,
-    "visualTime": 55,
+    "type": "np_lr",
+    "time": 50,
+    "visualTime": 50,
     "description": "Predicted long-range neuropeptidergic connectome, Ripoll-Sánchez et al. 2023 (Neuron 111:3570-3589). Extrasynaptic — not observed synapses.",
     "datatypes": "np"
   }
