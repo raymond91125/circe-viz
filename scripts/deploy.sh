@@ -50,6 +50,7 @@ if [ -d "$KG_OUT" ]; then
         pharyngeal_cells.json:pharyngeal-cells.json \
         pharynx_cells.json:pharynx-cells.json \
         np_cells.json:np-cells.json \
+        np_pairs.json:np-pairs.json \
         cell_sexes.json:cell-sexes.json \
         kg_connections.json:kg-connections.json; do
         src="$KG_OUT/${pair%%:*}"
