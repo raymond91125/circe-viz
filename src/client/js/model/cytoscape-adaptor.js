@@ -173,8 +173,10 @@ ModelPrototype.makeCytoscapeEdge = function(
     // Functional connection
     width = Math.max(1, 2 * Math.pow(Math.abs(meanSyn), 1 / 3) - 2);
   } else if (edgeType === 5) {
-    // Neuropeptidergic (predicted): weight = number of NPP-GPCR pathways (small ints)
-    width = Math.max(1, 1.5 * Math.pow(Math.abs(meanSyn), 1 / 3));
+    // Neuropeptidergic (predicted): weight = number of NPP-GPCR pathways (small ints, ~1-20).
+    // sqrt scaling (capped at 8, like gap junctions) spans ~1.5-7px so the pathway count is
+    // legible as line thickness; the previous cube-root * 1.5 compressed it to a flat ~1.5-4px.
+    width = Math.min(8, Math.max(1, 1.5 * Math.pow(Math.abs(meanSyn), 1 / 2)));
   }
 
   let label = datasets
