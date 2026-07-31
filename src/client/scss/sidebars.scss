@@ -186,9 +186,14 @@ $sidenav-padding: 16px;
   }
 
   .sel-placeholder, .option-container > div {
-    padding: 0 12px;
-    height: 32px;
-    line-height: 32px;
+    // Rows grow to fit wrapped labels instead of a fixed 32px height: a long entry (e.g.
+    // "Neuropeptide, short range (predicted)") wraps to two lines, and a fixed height let the
+    // second line overflow into — and overlap — the next item. min-height keeps single-line rows
+    // at 32px; padding + normal line-height centre one line and let two lines expand the row.
+    padding: 7px 12px;
+    min-height: 32px;
+    line-height: 1.3;
+    box-sizing: border-box;
   }
 
   .sel-placeholder {
