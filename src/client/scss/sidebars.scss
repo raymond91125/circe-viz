@@ -720,5 +720,19 @@ $sidenav-padding: 16px;
       cursor: help;
       white-space: nowrap;
     }
+
+    // Count of mediating NPP-GPCR pairs on a predicted-neuropeptide partner (amber, matching the
+    // np edge colour); the full ligand→receptor list is in the partner's hover title.
+    .kg-npcount {
+      display: inline-block;
+      min-width: 14px;
+      margin-left: 3px;
+      padding: 0 4px;
+      border-radius: 8px;
+      background: #e8820c;
+      color: #fff;
+      font-size: 0.85em;
+      text-align: center;
+    }
   }
 }

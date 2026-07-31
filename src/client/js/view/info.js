@@ -38,6 +38,32 @@ function loadKgConnections() {
   return kgConnectionsLoading;
 }
 
+// Which NPP-GPCR pairs mediate each predicted neuropeptide edge (Ripoll-Sánchez 2023 mechanistic
+// layer). Shape: {pairs: [[ligand, gpcr, ec50_nm, gpcr_class], ...], conn: {SRC: {TGT: [pairIdx]}}}
+// keyed by upper-cased class. Its own lazy chunk, loaded on first cell selection alongside the KG
+// connectivity map, so the peptide→receptor pairs behind an edge can be shown in the info panel.
+let NP_PAIRS = null;
+let npPairsLoading = null;
+function loadNpPairs() {
+  if (NP_PAIRS) { return Promise.resolve(NP_PAIRS); }
+  if (!npPairsLoading) {
+    npPairsLoading = import(/* webpackChunkName: "np-pairs" */ '../np-pairs.json')
+      .then(mod => { NP_PAIRS = mod.default || mod; return NP_PAIRS; })
+      .catch(() => { NP_PAIRS = { pairs: [], conn: {} }; return NP_PAIRS; });
+  }
+  return npPairsLoading;
+}
+
+// The mediating pairs for a directed class edge source→target, as "ligand→gpcr" strings (with EC50
+// in the hover title). Returns [] when the map isn't loaded or the edge has no attribution.
+function npPairsFor(source, target) {
+  if (!NP_PAIRS) { return []; }
+  let idxs = ((NP_PAIRS.conn[String(source).toUpperCase()] || {})[
+    String(target).toUpperCase()
+  ]) || [];
+  return idxs.map(i => NP_PAIRS.pairs[i]).filter(Boolean);
+}
+
 // Short human labels for KG dataset ids; unknown ids fall back to a prettified form.
 /* eslint-disable camelcase */
 const KG_DATASET_LABELS = {
@@ -235,7 +261,7 @@ class InfoView extends BaseView {
     let $box = this.$container.find('.kg-connections');
     $box.empty().hide();
     this._kgConnNode = node;
-    loadKgConnections().then(() => {
+    Promise.all([loadKgConnections(), loadNpPairs()]).then(() => {
       if (this._kgConnNode === node) { this.fillKgConnections($box, node); }
     });
   }
@@ -249,6 +275,9 @@ class InfoView extends BaseView {
     KG_RELATIONS.forEach(([rel, heading]) => {
       let partners = entry[rel];
       if (!partners) { return; }
+      // For the predicted-neuropeptide relations, resolve which NPP→GPCR pairs mediate each edge:
+      // npo = node→partner (node is the ligand source), npi = partner→node.
+      let isNp = rel === 'npo' || rel === 'npi';
       let names = Object.keys(partners).sort();
       let items = names
         .map(p => {
@@ -256,7 +285,19 @@ class InfoView extends BaseView {
           let detail = Object.keys(byDs)
             .map(code => `${kgDatasetLabel(datasets[Number(code)])}: ${byDs[code]}`)
             .join('\n');
-          return `<span class="kg-partner" title="${detail}">${p}</span>`;
+          let suffix = '';
+          if (isNp) {
+            let pairs = rel === 'npo' ? npPairsFor(node, p) : npPairsFor(p, node);
+            if (pairs.length) {
+              detail +=
+                '\nPairs (ligand → receptor):\n' +
+                pairs
+                  .map(pr => `  ${pr[0]} → ${pr[1]}${pr[2] ? ` (EC50 ${pr[2]} nM)` : ''}`)
+                  .join('\n');
+              suffix = ` <span class="kg-npcount">${pairs.length}</span>`;
+            }
+          }
+          return `<span class="kg-partner" title="${detail}">${p}${suffix}</span>`;
         })
         .join('');
       groups.push(
@@ -272,7 +313,9 @@ class InfoView extends BaseView {
           '<a class="kg-download" href="#" title="Download every connection listed here ' +
           '(all datasets, per dataset and weight) as CSV">Download CSV</a></div>' +
           '<div class="kg-note">All partners across every dataset in the knowledge graph, ' +
-          'unfiltered by this view\'s threshold. Hover a partner for datasets and weights.</div>' +
+          'unfiltered by this view\'s threshold. Hover a partner for datasets and weights; for ' +
+          'predicted neuropeptide partners the badge is the number of NPP–GPCR pairs and the ' +
+          'hover lists them (ligand → receptor).</div>' +
           groups.join('')
       )
       .show();
