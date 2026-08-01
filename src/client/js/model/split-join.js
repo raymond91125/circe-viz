@@ -120,7 +120,9 @@ ModelPrototype.splitSelected = function() {
           '<br />Functional connections: ' +
           this.thresholdFunctional +
           '<br />Neuropeptide pathways: ' +
-          this.thresholdNeuropeptidergic,
+          this.thresholdNeuropeptidergic +
+          '<br />Monoamine pathways: ' +
+          this.thresholdMonoaminergic,
         arr: filteredAfterSplit
       });
     }

@@ -58,6 +58,7 @@ ModelPrototype.growSelected = function() {
       thresholdElectrical: this.thresholdElectrical,
       thresholdFunctional: this.thresholdFunctional,
       thresholdNeuropeptidergic: this.thresholdNeuropeptidergic,
+      thresholdMonoaminergic: this.thresholdMonoaminergic,
       includeNeighboringCells: true,
       includeAnnotations: false
     })

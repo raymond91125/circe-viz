@@ -50,7 +50,7 @@ const toRawCell = c => ({
 });
 
 // api connection-type string -> the numeric `typ` code populate-connections.js switches on.
-const TYP_CODE = { chemical: 0, electrical: 2, functional: 4, neuropeptidergic: 5 };
+const TYP_CODE = { chemical: 0, electrical: 2, functional: 4, neuropeptidergic: 5, monoaminergic: 6 };
 
 // KG connection (/api/connections aggregated shape: synapses={datasetId: weight}) -> the raw-data
 // connection shape. populate-connections uses syn.length as the (chemical/electrical) synapse
@@ -112,6 +112,16 @@ for (const ds of npDatasets) {
   console.log(`connections/${ds.id}.json: ${raw.length} neuropeptide connections`);
 }
 
+// --- Monoamine (Ripoll-Sánchez 2023) predicted aminergic network --------------------------------
+const maDatasets = readJson(need(path.join(KG_OUT, 'neuron-graph-monoamine/datasets.json')));
+const maConns = readJson(need(path.join(KG_OUT, 'neuron-graph-monoamine/connections.json')));
+for (const ds of maDatasets) {
+  const raw = maConns.filter(c => (c.synapses[ds.id] || 0) > 0).map(c => toRawConnection(c, ds.id));
+  const out = path.join(RAW, 'connections', `${ds.id}.json`);
+  fs.writeFileSync(out, JSON.stringify(raw) + '\n');
+  console.log(`connections/${ds.id}.json: ${raw.length} monoamine connections`);
+}
+
 // --- Viz-only 'Pharynx + inferred muscle coupling' dataset --------------------------------------
 // cook_2020_pharynx records no muscle/marginal gap junctions (SI3, observed only). This viz-only
 // dataset unions the observed pharynx with the pharyngeal muscle/marginal gap junctions from Cook
@@ -157,10 +167,12 @@ const coupledDs = {
     + 'gap junctions from Cook 2019 (electrical coupling, Albertson & Thomson 1976). '
     + 'Visualization only - not part of the observed knowledge graph.'
 };
-const datasets = [...existing, ...maleDs, ...pharynxDs, ...dauerDs, coupledDs, ...npDatasets];
+const datasets = [
+  ...existing, ...maleDs, ...pharynxDs, ...dauerDs, coupledDs, ...npDatasets, ...maDatasets
+];
 fs.writeFileSync(datasetsPath, JSON.stringify(datasets, null, 2) + '\n');
 console.log(
   `datasets.json: ${datasets.length} datasets ` +
     `(+${maleDs.length + pharynxDs.length} Cook, +${dauerDs.length} dauer, ` +
-    `+${npDatasets.length} neuropeptide)`
+    `+${npDatasets.length} neuropeptide, +${maDatasets.length} monoamine)`
 );

@@ -87,6 +87,7 @@
                 <div id="np_sr">Neuropeptide, short range (predicted)</div>
                 <div id="np_mr">Neuropeptide, mid range (predicted)</div>
                 <div id="np_lr">Neuropeptide, long range (predicted)</div>
+                <div id="monoamine">Monoamine (predicted)</div>
               </div>
             </div>
             <div id="set-datasets">
@@ -159,6 +160,14 @@
             <div class="float-wrapper">
               <div class="number-input-label">Neuropeptide (<small>predicted pathways</small>):</div>
               <div class="number-input" id="threshold-np">
+                <div class="button" data-type="minus">-</div>
+                <input value="" />
+                <div class="button" data-type="plus">+</div>
+              </div>
+            </div>
+            <div class="float-wrapper">
+              <div class="number-input-label">Monoamine (<small>predicted pathways</small>):</div>
+              <div class="number-input" id="threshold-ma">
                 <div class="button" data-type="minus">-</div>
                 <input value="" />
                 <div class="button" data-type="plus">+</div>
@@ -259,6 +268,7 @@
           <li id="edge-typ4-inh"><img width=30 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAWCAYAAACVIF9YAAABRGlDQ1BJQ0NQcm9maWxlAAB4nGNgYBJJLCjIYWFgYMjNKykKcndSiIiMUmB/xsAChDwMagySicnFBY4BAT5AJQwwGhV8u8bACKIv64LM2iDwpdSkrvrYTI3JJ+SsTppjqkcBXCmpxclA+g8QpyUXFJUwMDCmANnK5SUFIHYHkC1SBHQUkD0HxE6HsDeA2EkQ9hGwmpAgZyD7BpAtkJyRCDSD8QWQrZOEJJ6OxIbaCwI8Lq4+PgoBRuZGhoEEnEs6KEmtKAHRzvkFlUWZ6RklCo7AUEpV8MxL1tNRMDIwMmJgAIU5RPXnG+CwZBTjQIjlTWFgMHsOFKxAiCXwMTDsPAN0uhxCTMOEgYHfl4Hh6PSCxKJEuAMYv7EUpxkbQdjc2xkYWKf9//85nIGBXZOB4e/1//9/b////+8yBgbmWwwMB74BAG7QXuHMOQDCAAAKimlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS42LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczpleGlmPSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj40ODwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlVzZXJDb21tZW50PgogICAgICAgICAgICA8cmRmOkFsdD4KICAgICAgICAgICAgICAgPHJkZjpsaSB4bWw6bGFuZz0ieC1kZWZhdWx0Ij5TY3JlZW5zaG90PC9yZGY6bGk+CiAgICAgICAgICAgIDwvcmRmOkFsdD4KICAgICAgICAgPC9leGlmOlVzZXJDb21tZW50PgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MjY8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgIAo8P3hwYWNrZXQgZW5kPSJ3Ij8+5VGxmQAAAAlwSFlzAAAWJQAAFiUBSVIk8AAAAtN0RVh0Q29tbWVudABlWElmIGNodW5rbGVuIDEzOCBpZ25vcmVkOg1BU0NJSTogTU0uKi4uLi4uLi4uLi4uLi4uLi4uPi4uLi4uLi4uLi4uRi4oLi4uLi4uLi4uLsKHaS4uLi4uLi4uLk4uLi4uLi4uwpAuLi4uLi4uwpAuLi4uLi7CksKGLi4uLi4uLi4ueMKgLi4uLi4uLi4uLjDCoC4uLi4uLi4uLi4uLi4uLkFTQ0lJLi4uU2NyZWVuc2hvdA1IRVg6IDRENEQwMDJBMDAwMDAwMDgwMDA0MDExQTAwMDUwMDAwMDAwMTAwMDAwMDNFMDExQjAwMDUwMDAwMDAwMTAwMDAwMDQ2MDEyODAwMDMwMDAwMDAwMTAwMDIwMDAwODc2OTAwMDQwMDAwMDAwMTAwMDAwMDRFMDAwMDAwMDAwMDAwMDA5MDAwMDAwMDAxMDAwMDAwOTAwMDAwMDAwMTAwMDM5Mjg2MDAwNzAwMDAwMDEyMDAwMDAwNzhBMDAyMDAwNDAwMDAwMDAxDWlET1QgY2h1bmtsZW4gSEVYOiA0RDREMDAyQTAwMDAwMDA4MDAwNDAxMUEwMDA1MDAwMDAwMDEwMDAwMDAzRTAxMUIwMDA1MDAwMDAwMDEwMDAwMDA0NjAxMjgwMDAzMDAwMDAwMDEwMDAyMDAwMDg3NjkwMDA0MDAwMDAwMDEwMDAwMDA0RTAwMDAwMDAwMDAwMDAwOTAwMDAwMDAwMTAwMDAwMDkwMDAwMDAwMDEwMDAzOTI4NjAwMDcwMDAwMDAxMjAwMDAwMDc4QTAwMjAwMDQwMDAwMDAwMTI4IGlnbm9yZWQ6DUFTQ0lJOiAuLi4uLi4uLi4uLi4uLi4oLi4uLi4uLi4uLi7DrQ1IRVg6IDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwRDAwMDAwMDI4MDAwMDAwMEQwMDAwMDAwRDAwMDAwMEVEShH0BAAAAJFJREFUeJxi+PTpE8NwxgPugFEPjnpwEHrw9tsnROEzC+//R8fDyoOtDAf+o+NRD456kAD++P7j//MrHmDkDVrgAfHgg9Mv//dI7qMLHhAP3j/1YtSDox4czB589+rD/z111/7vKL9CczxkqwkQHrTVxKgHRz1IfEsGW74cEh6kJx5wB4x6cNSD+DEAAAD//wMANSZhF0IHjU0AAAAASUVORK5CYII="> Inhibitory</li>
         </ol>
         <li id="edge-typ5" class="basic">Neuropeptide (predicted)</li>
+        <li id="edge-typ6" class="basic">Monoamine (predicted)</li>
       </ol>
       <ol id="legend-annotations" class="edges">
         <li id="edge-stable">Stable <small><i class="icon-question-circle-o smallhelp" data-topic="annotations"></i></small></li>
@@ -477,6 +487,21 @@
               range &mdash; nested subsets differing in how far a peptide is assumed to reach; they
               are off by default and picked from the database dropdown.
             </div>
+            <h2>Ripoll-S&aacute;nchez et al., 2023, monoamine connectome
+              <span class="source-flag">predicted</span></h2>
+            <div class="p">
+              The <b>aminergic</b> companion to the neuropeptide network (the "Monoamine
+              (predicted)" database), built the same way by
+              <a href="https://doi.org/10.1016/j.neuron.2023.09.043" target="_blank">Ripoll-S&aacute;nchez
+              et al., 2023</a> for the four classical monoamines. A directed edge means the source
+              <em>produces</em> a monoamine (serotonin, dopamine, octopamine or tyramine) and the
+              target expresses a cognate GPCR, for a monoamine&ndash;receptor pair
+              (<a href="https://doi.org/10.1371/journal.pcbi.1005283" target="_blank">Bentley et al.,
+              2016</a>) over CeNGEN receptor expression; weight = number of such pathways. A single
+              network (no range models), drawn dashed teal to set it apart from the amber
+              neuropeptide edges. <em>Not</em> observed synapses; off by default. The 14
+              monoamine&ndash;receptor pairs are also queryable in the knowledge graph (SPARQL).
+            </div>
             <h2>Cook et al., 2019, adult hermaphrodite <span class="source-flag">not in
               visualization</span></h2>
             <div class="p">
@@ -614,6 +639,10 @@
               <div data-dataset="ripoll_2023_np_sr">Neuropeptide, short range (predicted)</div>
               <div data-dataset="ripoll_2023_np_mr">Neuropeptide, mid range (predicted)</div>
               <div data-dataset="ripoll_2023_np_lr">Neuropeptide, long range (predicted)</div>
+            </div>
+            <h2>Ripoll-S&aacute;nchez et al., 2023 (monoamine, predicted)</h2>
+            <div class="p download-dataset">
+              <div data-dataset="ripoll_2023_ma">Monoamine (predicted)</div>
             </div>
             <h2>White et al., 1986</h2>
             <div class="p download-dataset">

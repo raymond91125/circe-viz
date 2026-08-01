@@ -136,6 +136,8 @@ ModelPrototype.makeCytoscapeEdge = function(
         presentEdgeType = 4;
       } else if (dt === 'np') {
         presentEdgeType = 5;
+      } else if (dt === 'ma') {
+        presentEdgeType = 6;
       } else {
         let datasetName = DataService.getDatasetInfo(database, dataset).name;
         throw 'Unknown edge type [' + dt + '] encountered in dataset ' + datasetName;
@@ -177,6 +179,9 @@ ModelPrototype.makeCytoscapeEdge = function(
     // sqrt scaling (capped at 8, like gap junctions) spans ~1.5-7px so the pathway count is
     // legible as line thickness; the previous cube-root * 1.5 compressed it to a flat ~1.5-4px.
     width = Math.min(8, Math.max(1, 1.5 * Math.pow(Math.abs(meanSyn), 1 / 2)));
+  } else if (edgeType === 6) {
+    // Monoaminergic (predicted): weight = number of monoamine-receptor pathways (small ints, 1-3).
+    width = Math.min(8, Math.max(1.5, 2 * meanSyn));
   }
 
   let label = datasets
@@ -260,6 +265,7 @@ ModelPrototype.convertModelToCytoscape = function(
   const GJ = 2; // Gap junction type
   const FC = 4; // Functional connection type
   const NP = 5; // Neuropeptidergic (predicted) type
+  const MA = 6; // Monoaminergic (predicted) type
 
   let {
     input: inputs,
@@ -351,6 +357,9 @@ ModelPrototype.convertModelToCytoscape = function(
             functional: flatten(groupMembers.map(gm => G.edges('functional', gm))),
             neuropeptidergic: flatten(
               groupMembers.map(gm => G.edges('neuropeptidergic', gm))
+            ),
+            monoaminergic: flatten(
+              groupMembers.map(gm => G.edges('monoaminergic', gm))
             )
           };
 
@@ -441,6 +450,11 @@ ModelPrototype.convertModelToCytoscape = function(
 
   G.edges('neuropeptidergic').forEach(e => {
     let edge = this.makeCytoscapeEdge(e[0], e[1], NP, e[2], modelState);
+    edges[edge['data']['id']] = edge;
+  });
+
+  G.edges('monoaminergic').forEach(e => {
+    let edge = this.makeCytoscapeEdge(e[0], e[1], MA, e[2], modelState);
     edges[edge['data']['id']] = edge;
   });
 

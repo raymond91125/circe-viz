@@ -152,6 +152,9 @@
 #edge-typ5::before {
   color: map-get($edge-colors, typ5);
 }
+#edge-typ6::before {
+  color: map-get($edge-colors, typ6);
+}
 #edge-typ4-exc::before {
   color: map-get($edge-colors, typ4);
 }

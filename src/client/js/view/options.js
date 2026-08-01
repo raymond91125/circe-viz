@@ -212,6 +212,8 @@ class OptionsView extends BaseView {
         this.emit('setThresholdFunctional', threshold);
       } else if ($el.attr('id') == 'threshold-np') {
         this.emit('setThresholdNeuropeptidergic', threshold);
+      } else if ($el.attr('id') == 'threshold-ma') {
+        this.emit('setThresholdMonoaminergic', threshold);
       }
     });
 

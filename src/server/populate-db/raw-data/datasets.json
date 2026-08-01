@@ -321,5 +321,14 @@
     "visualTime": 50,
     "description": "Predicted long-range neuropeptidergic connectome, Ripoll-Sánchez et al. 2023 (Neuron 111:3570-3589). Extrasynaptic — not observed synapses.",
     "datatypes": "np"
+  },
+  {
+    "id": "ripoll_2023_ma",
+    "name": "Ripoll-Sánchez 2023 (monoamine, predicted)",
+    "type": "monoamine",
+    "time": 50,
+    "visualTime": 50,
+    "description": "Predicted monoamine (aminergic) connectome, Ripoll-Sánchez et al. 2023 (Neuron 111:3570-3589); receptor pairs from Bentley et al. 2016. Extrasynaptic — not observed synapses.",
+    "datatypes": "ma"
   }
 ]

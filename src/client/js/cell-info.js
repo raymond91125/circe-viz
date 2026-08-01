@@ -30,6 +30,10 @@ const PHARYNX_COUPLED_CELLS = new Set([
 // neuropeptide databases (np_sr/np_mr/np_lr).
 const NP_CELLS = new Set(require('./np-cells.json'));
 
+// Nodes (cells + classes, upper-cased) of the predicted monoamine network, from the KG. Populates
+// the single 'monoamine' database.
+const MA_CELLS = new Set(require('./monoamine-cells.json'));
+
 class CellInfo {
   constructor() {
     this.isCell = {};
@@ -43,7 +47,7 @@ class CellInfo {
     this.emb = {};
     this.validNodes = {
       complete: [], head: [], tail: [], unc31: [], male: [], pharynx: [], pharynxCoupled: [],
-      np_sr: [], np_mr: [], np_lr: []
+      np_sr: [], np_mr: [], np_lr: [], monoamine: []
     };
     this.incompleteNodes = {
       complete: [],
@@ -120,7 +124,8 @@ class CellInfo {
       pharynxCoupled: [],
       np_sr: [],
       np_mr: [],
-      np_lr: []
+      np_lr: [],
+      monoamine: []
     };
 
     this.cellClassLegacy = {};
@@ -204,6 +209,12 @@ class CellInfo {
         this.validNodes[db].push(cell);
         this.validNodes[db].push(cls);
       });
+    }
+
+    // The predicted monoamine database.
+    if (MA_CELLS.has(cell)) {
+      this.validNodes['monoamine'].push(cell);
+      this.validNodes['monoamine'].push(cls);
     }
 
     // Set VCn class info manually, as individual neurons are different.
