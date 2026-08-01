@@ -100,6 +100,7 @@ class Model extends EventEmitter {
         thresholdElectrical: this.thresholdElectrical,
         thresholdFunctional: this.thresholdFunctional,
         thresholdNeuropeptidergic: this.thresholdNeuropeptidergic,
+        thresholdMonoaminergic: this.thresholdMonoaminergic,
         includeNeighboringCells: this.showLinked,
         includeAnnotations: true
       })
@@ -137,6 +138,7 @@ class Model extends EventEmitter {
       thresholdElectrical: this.thresholdElectrical,
       thresholdFunctional: this.thresholdFunctional,
       thresholdNeuropeptidergic: this.thresholdNeuropeptidergic,
+      thresholdMonoaminergic: this.thresholdMonoaminergic,
       showLinked: this.showLinked,
       showIndividual: this.showIndividual,
       showEdgeLabel: this.showEdgeLabel,

@@ -12,6 +12,7 @@ const KEY_TO_COOKIE_MAP = {
   thresholdElectrical: 'te',
   thresholdFunctional: 'tf',
   thresholdNeuropeptidergic: 'tn',
+  thresholdMonoaminergic: 'tm',
   showLinked: 'sl',
   showIndividual: 'si',
   showEdgeLabel: 'se',
@@ -102,7 +103,8 @@ const decodeParameters = rawParameters => {
         'thresholdChemical',
         'thresholdElectrical',
         'thresholdFunctional',
-        'thresholdNeuropeptidergic'
+        'thresholdNeuropeptidergic',
+        'thresholdMonoaminergic'
       ].includes(key)
     ) {
       value = parseInt(value, 10);
@@ -212,6 +214,9 @@ class CookiesView extends BaseView {
     });
     this.model.on('neuropeptidergicThresholdChanged', threshold => {
       this.setCookie('thresholdNeuropeptidergic', threshold);
+    });
+    this.model.on('monoaminergicThresholdChanged', threshold => {
+      this.setCookie('thresholdMonoaminergic', threshold);
     });
     this.model.on('layoutChanged', layout => {
       this.setCookie('layout', layout);

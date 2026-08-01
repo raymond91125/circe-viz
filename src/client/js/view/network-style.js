@@ -50,6 +50,7 @@ let cytoscapeColors = {
     typ2: '#666666',
     typ4: '#9900CC',
     typ5: '#E8820C',
+    typ6: '#0E8F7E',
     juvenile: '#2A9EFE',
     mature: '#FF0000',
     'not-classified': '#228B22',
@@ -359,6 +360,29 @@ let cystyle = {
         'line-color': cytoscapeColors.coloursEdge['typ5'],
         'target-arrow-shape': 'triangle',
         'target-arrow-color': cytoscapeColors.coloursEdge['typ5'],
+        color: 'black',
+        'control-point-step-size': 20,
+
+        'text-outline-width': 2,
+        'text-outline-color': cytoscapeColors.backgroundColor,
+        'source-distance-from-node': 10,
+        'target-distance-from-node': 10
+      }
+    },
+    {
+      // Monoaminergic: predicted extrasynaptic aminergic signalling. Dashed + a distinct teal so
+      // it reads apart from both observed synapses and the amber neuropeptide edges; directed.
+      selector: 'edge[type = 6]',
+      css: {
+        width: 'data(width)',
+        'font-size': '18px',
+        'z-index': 4,
+        'curve-style': 'bezier',
+        'line-style': 'dashed',
+        'line-dash-pattern': [6, 4],
+        'line-color': cytoscapeColors.coloursEdge['typ6'],
+        'target-arrow-shape': 'triangle',
+        'target-arrow-color': cytoscapeColors.coloursEdge['typ6'],
         color: 'black',
         'control-point-step-size': 20,
 

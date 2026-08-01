@@ -56,6 +56,11 @@ ModelPrototype.setThresholdNeuropeptidergic = function(threshold) {
   this.emit('neuropeptidergicThresholdChanged', threshold);
 };
 
+ModelPrototype.setThresholdMonoaminergic = function(threshold) {
+  this.thresholdMonoaminergic = threshold;
+  this.emit('monoaminergicThresholdChanged', threshold);
+};
+
 ModelPrototype.setShowLinked = function(checked) {
   this.showLinked = checked;
   this.emit('showLinkedChanged', checked);

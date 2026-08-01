@@ -72,7 +72,8 @@ let queryConnections = async (connection, opts) => {
     thresholdChemical,
     thresholdElectrical,
     thresholdFunctional,
-    thresholdNeuropeptidergic
+    thresholdNeuropeptidergic,
+    thresholdMonoaminergic
   } = opts;
 
   // First, get all connections matching the threshold, then fetch the synapse number for these
@@ -89,6 +90,7 @@ let queryConnections = async (connection, opts) => {
           OR (type = 'electrical' && synapses >= ${thresholdElectrical})
           OR (type = 'functional' && ABS(synapses) >= ${thresholdFunctional})
           OR (type = 'neuropeptidergic' && synapses >= ${thresholdNeuropeptidergic})
+          OR (type = 'monoaminergic' && synapses >= ${thresholdMonoaminergic})
         )
       GROUP BY pre, post, type
     ) f
@@ -129,6 +131,10 @@ let queryNematodeConnections = async (connection, opts) => {
     !isNaN(parseInt(opts.thresholdNeuropeptidergic))
       ? opts.thresholdNeuropeptidergic
       : 3;
+  let thresholdMonoaminergic =
+    !isNaN(parseInt(opts.thresholdMonoaminergic))
+      ? opts.thresholdMonoaminergic
+      : 1;
   let includeNeighboringCells =
     typeof opts.includeNeighboringCells === 'string'
       ? opts.includeNeighboringCells === 'true'
@@ -170,7 +176,8 @@ let queryNematodeConnections = async (connection, opts) => {
     thresholdChemical,
     thresholdElectrical,
     thresholdFunctional,
-    thresholdNeuropeptidergic
+    thresholdNeuropeptidergic,
+    thresholdMonoaminergic
   });
 
   // for each connection, append the number of synapses that each dataset has for that connection
@@ -199,12 +206,14 @@ let queryNematodeConnections = async (connection, opts) => {
   const chemicalSynapses = connections.filter(c => c.type == 'chemical');
   const functionalSynapses = connections.filter(c => c.type == 'functional');
   const neuropeptidergic = connections.filter(c => c.type == 'neuropeptidergic');
+  const monoaminergic = connections.filter(c => c.type == 'monoaminergic');
   const mergedGapJunctions = mergeGapJunctions(gapJunctions);
   return [
     ...mergedGapJunctions,
     ...chemicalSynapses,
     ...functionalSynapses,
-    ...neuropeptidergic
+    ...neuropeptidergic,
+    ...monoaminergic
   ];
 };
 

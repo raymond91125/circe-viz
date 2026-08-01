@@ -86,7 +86,8 @@ const KG_DATASET_LABELS = {
   witvliet_2020_8: 'Witvliet 2020 (dataset 8)',
   ripoll_2023_neuropeptide_sr: 'Ripoll-Sánchez 2023 (NP short-range)',
   ripoll_2023_neuropeptide_mr: 'Ripoll-Sánchez 2023 (NP mid-range)',
-  ripoll_2023_neuropeptide_lr: 'Ripoll-Sánchez 2023 (NP long-range)'
+  ripoll_2023_neuropeptide_lr: 'Ripoll-Sánchez 2023 (NP long-range)',
+  ripoll_2023_monoamine: 'Ripoll-Sánchez 2023 (monoamine)'
 };
 /* eslint-enable camelcase */
 
@@ -102,7 +103,9 @@ const KG_RELATIONS = [
   ['fo', 'Functional output'],
   ['fi', 'Functional input'],
   ['npo', 'Neuropeptide output (predicted)'],
-  ['npi', 'Neuropeptide input (predicted)']
+  ['npi', 'Neuropeptide input (predicted)'],
+  ['mao', 'Monoamine output (predicted)'],
+  ['mai', 'Monoamine input (predicted)']
 ];
 
 // Relation code -> [connection type, direction] for the CSV export columns.
@@ -113,7 +116,9 @@ const KG_REL_META = {
   fo: ['functional', 'outgoing'],
   fi: ['functional', 'incoming'],
   npo: ['neuropeptidergic (predicted)', 'outgoing'],
-  npi: ['neuropeptidergic (predicted)', 'incoming']
+  npi: ['neuropeptidergic (predicted)', 'incoming'],
+  mao: ['monoaminergic (predicted)', 'outgoing'],
+  mai: ['monoaminergic (predicted)', 'incoming']
 };
 
 // Quote a CSV field only when it contains a comma, quote, or newline (RFC 4180).

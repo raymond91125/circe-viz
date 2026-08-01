@@ -54,6 +54,9 @@ let populateConnections = async (dbConn, connectionsJSON) => {
       case 5:
         type = 'neuropeptidergic';
         break;
+      case 6:
+        type = 'monoaminergic';
+        break;
       default:
         type = 'undefined';
         break;

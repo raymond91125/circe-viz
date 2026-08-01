@@ -43,6 +43,7 @@ router.get('/api/connections', (req, res) => {
     thresholdElectrical,
     thresholdFunctional,
     thresholdNeuropeptidergic,
+    thresholdMonoaminergic,
     includeNeighboringCells,
     includeAnnotations
   } = req.query;
@@ -55,6 +56,7 @@ router.get('/api/connections', (req, res) => {
     thresholdElectrical,
     thresholdFunctional,
     thresholdNeuropeptidergic,
+    thresholdMonoaminergic,
     includeNeighboringCells,
     includeAnnotations
   };
