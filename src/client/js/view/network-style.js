@@ -86,7 +86,13 @@ let cystyle = {
         'text-valign': 'center',
         width: '45px',
         height: '45px',
-        'text-margin-y': labelShift
+        'text-margin-y': labelShift,
+        // Pad the (invisible) label background so the glyphs never sit at the very edge of the
+        // label's render texture. On fractional-DPI displays (e.g. 1.25x) Cytoscape rounds the
+        // per-label texture size down, which otherwise clips the edge pixel column of some labels
+        // (e.g. the left of the "M" in "M2") until the node is re-rendered at a different size.
+        'text-background-opacity': 0,
+        'text-background-padding': '4px'
       }
     },
     {
