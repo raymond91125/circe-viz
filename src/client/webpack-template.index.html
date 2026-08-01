@@ -460,6 +460,22 @@
               <em>not</em> part of the observed knowledge graph, and the observed "Pharynx" database
               is left unchanged.
             </div>
+            <h2>Ripoll-S&aacute;nchez et al., 2023, neuropeptide connectome
+              <span class="source-flag">predicted</span></h2>
+            <div class="p">
+              A genome-scale <b>predicted</b> neuropeptide signaling network (the three
+              "Neuropeptide (predicted)" databases), from
+              <a href="https://doi.org/10.1016/j.neuron.2023.09.043" target="_blank">Ripoll-S&aacute;nchez
+              et al., 2023</a>. Unlike the electron-microscopy connectomes above, these are
+              <em>not</em> observed synapses: a directed edge means the source neuron expresses a
+              neuropeptide (NPP) whose cognate GPCR is expressed by the target, for a biochemically
+              deorphanized NPP&ndash;GPCR pair (Beets et al., 2023; EC50 &le; 500 nM) over CeNGEN
+              single-cell expression. Edge weight is the number of such NPP&ndash;GPCR pathways, and
+              edges are drawn dashed amber to set them apart from observed connections. The three
+              databases are the paper's diffusion <b>range models</b> &mdash; short, mid and long
+              range &mdash; nested subsets differing in how far a peptide is assumed to reach; they
+              are off by default and picked from the database dropdown.
+            </div>
             <h2>Cook et al., 2019, adult hermaphrodite <span class="source-flag">not in
               visualization</span></h2>
             <div class="p">
@@ -515,6 +531,16 @@
               non-dauer and dauer stages, from
               <a href="https://doi.org/10.1016/j.cell.2018.12.024" target="_blank">Bhattacharya et
               al., 2019</a> (Figure 1B).
+            </div>
+            <h2>Ripoll-S&aacute;nchez et al., 2023, neuropeptide expression &amp; NPP&ndash;GPCR pairs</h2>
+            <div class="p">
+              The mechanistic substrate of the predicted neuropeptide connectome (above): the 92
+              deorphanized NPP&ndash;GPCR ligand&ndash;receptor pairs (with EC50, from Beets et al.,
+              2023) and per-neuron expression of their neuropeptide and GPCR genes (CeNGEN
+              single-cell RNA-seq, threshold 4). From these the network is <em>derived</em> &mdash;
+              a source&rarr;target edge exists where the source expresses a ligand and the target its
+              cognate GPCR &mdash; and each predicted edge's mediating ligand&rarr;receptor pairs are
+              listed in the cell-info panel. Genes are keyed to persistent WormBase ids.
             </div>
           </div>
           <div id="annotations-content">
@@ -580,6 +606,12 @@
             <h2>Yim et al., 2024</h2>
             <div class="p download-dataset">
               <div data-dataset="yim_2024_dauer">Dauer (nerve ring)</div>
+            </div>
+            <h2>Ripoll-S&aacute;nchez et al., 2023 (neuropeptide, predicted)</h2>
+            <div class="p download-dataset">
+              <div data-dataset="ripoll_2023_np_sr">Neuropeptide, short range (predicted)</div>
+              <div data-dataset="ripoll_2023_np_mr">Neuropeptide, mid range (predicted)</div>
+              <div data-dataset="ripoll_2023_np_lr">Neuropeptide, long range (predicted)</div>
             </div>
             <h2>White et al., 1986</h2>
             <div class="p download-dataset">
