@@ -42,7 +42,17 @@ app.use(cookieParser());
 app.use(
   express.static(path.join(__dirname, '../..', 'dist'), {
     immutable: true,
-    maxAge: 31557600000
+    maxAge: 31557600000,
+    setHeaders: (res, filePath) => {
+      // The HTML entry point references content-hashed bundles by name, so it must not be
+      // immutable-cached: otherwise a returning visitor keeps an old index.html that points at
+      // a bundle deleted by the next deploy, and either never sees the update or 404s on the
+      // missing bundle. Serve it `no-cache` so the browser revalidates (ETag/Last-Modified ->
+      // 304 when unchanged) before use. The hashed assets keep the long immutable cache above.
+      if (filePath.endsWith('index.html')) {
+        res.setHeader('Cache-Control', 'no-cache');
+      }
+    }
   })
 );
 
