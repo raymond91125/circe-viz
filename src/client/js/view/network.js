@@ -26,7 +26,10 @@ class GraphView extends View2 {
     this.cy = cytoscape({
       container: this.$container,
       boxSelectionEnabled: true,
-      motionBlur: true,
+      // motionBlur renders a low-res/ghosted frame during redraws, which left node labels (e.g.
+      // "M2") partially clipped until a full redraw — selecting a node forced that redraw and the
+      // label snapped back. Off (the Cytoscape default) so every frame renders labels cleanly.
+      motionBlur: false,
       selectionType: 'additive',
       style: cystyle.stylesheet,
       minZoom: 0.2,
