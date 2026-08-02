@@ -64,6 +64,33 @@ function npPairsFor(source, target) {
   return idxs.map(i => NP_PAIRS.pairs[i]).filter(Boolean);
 }
 
+// Which monoamine→receptor pairs mediate each predicted monoaminergic edge (Ripoll-Sánchez 2023
+// mechanistic layer, reconstructed + validated against the published weights). Shape:
+// {pairs: [[monoamine, receptor], ...], conn: {SRC: {TGT: [pairIdx]}}} keyed by upper-cased class.
+// Own lazy chunk, loaded alongside the KG map so the monoamine→receptor pairs behind a monoamine
+// edge can be shown in the info panel. Mirrors NP_PAIRS.
+let MA_PAIRS = null;
+let maPairsLoading = null;
+function loadMaPairs() {
+  if (MA_PAIRS) { return Promise.resolve(MA_PAIRS); }
+  if (!maPairsLoading) {
+    maPairsLoading = import(/* webpackChunkName: "ma-pairs" */ '../ma-pairs.json')
+      .then(mod => { MA_PAIRS = mod.default || mod; return MA_PAIRS; })
+      .catch(() => { MA_PAIRS = { pairs: [], conn: {} }; return MA_PAIRS; });
+  }
+  return maPairsLoading;
+}
+
+// The mediating pairs for a directed class edge source→target, as [monoamine, receptor] tuples.
+// Returns [] when the map isn't loaded or the edge has no attribution.
+function maPairsFor(source, target) {
+  if (!MA_PAIRS) { return []; }
+  let idxs = ((MA_PAIRS.conn[String(source).toUpperCase()] || {})[
+    String(target).toUpperCase()
+  ]) || [];
+  return idxs.map(i => MA_PAIRS.pairs[i]).filter(Boolean);
+}
+
 // Short human labels for KG dataset ids; unknown ids fall back to a prettified form.
 /* eslint-disable camelcase */
 const KG_DATASET_LABELS = {
@@ -266,7 +293,7 @@ class InfoView extends BaseView {
     let $box = this.$container.find('.kg-connections');
     $box.empty().hide();
     this._kgConnNode = node;
-    Promise.all([loadKgConnections(), loadNpPairs()]).then(() => {
+    Promise.all([loadKgConnections(), loadNpPairs(), loadMaPairs()]).then(() => {
       if (this._kgConnNode === node) { this.fillKgConnections($box, node); }
     });
   }
@@ -283,6 +310,9 @@ class InfoView extends BaseView {
       // For the predicted-neuropeptide relations, resolve which NPP→GPCR pairs mediate each edge:
       // npo = node→partner (node is the ligand source), npi = partner→node.
       let isNp = rel === 'npo' || rel === 'npi';
+      // For the predicted-monoamine relations, likewise resolve the mediating monoamine→receptor
+      // pairs: mao = node→partner (node produces the monoamine), mai = partner→node.
+      let isMa = rel === 'mao' || rel === 'mai';
       let names = Object.keys(partners).sort();
       let items = names
         .map(p => {
@@ -299,6 +329,14 @@ class InfoView extends BaseView {
                 pairs
                   .map(pr => `  ${pr[0]} → ${pr[1]}${pr[2] ? ` (EC50 ${pr[2]} nM)` : ''}`)
                   .join('\n');
+              suffix = ` <span class="kg-npcount">${pairs.length}</span>`;
+            }
+          } else if (isMa) {
+            let pairs = rel === 'mao' ? maPairsFor(node, p) : maPairsFor(p, node);
+            if (pairs.length) {
+              detail +=
+                '\nPairs (monoamine → receptor):\n' +
+                pairs.map(pr => `  ${pr[0]} → ${pr[1]}`).join('\n');
               suffix = ` <span class="kg-npcount">${pairs.length}</span>`;
             }
           }
@@ -319,8 +357,8 @@ class InfoView extends BaseView {
           '(all datasets, per dataset and weight) as CSV">Download CSV</a></div>' +
           '<div class="kg-note">All partners across every dataset in the knowledge graph, ' +
           'unfiltered by this view\'s threshold. Hover a partner for datasets and weights; for ' +
-          'predicted neuropeptide partners the badge is the number of NPP–GPCR pairs and the ' +
-          'hover lists them (ligand → receptor).</div>' +
+          'predicted neuropeptide or monoamine partners the badge is the number of mediating ' +
+          'receptor pairs and the hover lists them (ligand/monoamine → receptor).</div>' +
           groups.join('')
       )
       .show();
