@@ -2,6 +2,7 @@ const $ = require('jquery');
 const Clipboard = require('clipboard');
 
 const BaseView = require('./base-view');
+const DataService = require('../data-service');
 
 const KEY_TO_COOKIE_MAP = {
   database: 'db',
@@ -88,7 +89,20 @@ const decodeParameters = rawParameters => {
     }
 
     if (key == 'database') {
-      value = ['complete', 'head', 'tail'].includes(value) ? value : null;
+      // Validate against the databases actually loaded, not a hardcoded list. The predicted
+      // networks (np_sr / np_mr / np_lr, monoamine) and others (male, pharynx, pharynxCoupled,
+      // unc31) are each their own "database" (dataset collection); a stale whitelist here
+      // silently dropped them, so a shared link to e.g. a neuropeptide mid-range network
+      // fell back to the default complete-animal view.
+      let validDatabases;
+      try {
+        validDatabases = DataService.getDatabaseList();
+      } catch (e) {
+        validDatabases = null; // data not loaded yet — let setState validate downstream
+      }
+      if (validDatabases && !validDatabases.has(value)) {
+        value = null;
+      }
     }
     if (key == 'nodeColor') {
       value = ['nt', 'type'].includes(value) ? value : null;
