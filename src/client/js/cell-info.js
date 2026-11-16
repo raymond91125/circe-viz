@@ -34,6 +34,10 @@ const NP_CELLS = new Set(require('./np-cells.json'));
 // the single 'monoamine' database.
 const MA_CELLS = new Set(require('./monoamine-cells.json'));
 
+// Nodes (cells + classes, upper-cased) of the DERIVED male neuropeptide network (Phase C), from the
+// KG. Populates the single 'np_male' database; includes male-specific neurons (CEM, HOA/HOB, …).
+const MALE_NP_CELLS = new Set(require('./male-np-cells.json'));
+
 class CellInfo {
   constructor() {
     this.isCell = {};
@@ -47,7 +51,7 @@ class CellInfo {
     this.emb = {};
     this.validNodes = {
       complete: [], head: [], tail: [], unc31: [], male: [], pharynx: [], pharynxCoupled: [],
-      np_sr: [], np_mr: [], np_lr: [], monoamine: []
+      np_sr: [], np_mr: [], np_lr: [], monoamine: [], np_male: []
     };
     this.incompleteNodes = {
       complete: [],
@@ -125,7 +129,8 @@ class CellInfo {
       np_sr: [],
       np_mr: [],
       np_lr: [],
-      monoamine: []
+      monoamine: [],
+      np_male: []
     };
 
     this.cellClassLegacy = {};
@@ -215,6 +220,12 @@ class CellInfo {
     if (MA_CELLS.has(cell)) {
       this.validNodes['monoamine'].push(cell);
       this.validNodes['monoamine'].push(cls);
+    }
+
+    // The derived male neuropeptide database (Phase C).
+    if (MALE_NP_CELLS.has(cell)) {
+      this.validNodes['np_male'].push(cell);
+      this.validNodes['np_male'].push(cls);
     }
 
     // Set VCn class info manually, as individual neurons are different.

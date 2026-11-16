@@ -9,6 +9,7 @@
 //   outputs/neuron-graph-male/   cook_2019_male  cells + connections + dataset
 //   outputs/neuron-graph-pharynx/cook_2020_pharynx cells + connections + dataset
 //   outputs/neuron-graph-dauer/  yim_2024_dauer  cells + connections + dataset (a "head" life stage)
+//   outputs/neuron-graph-male-neuropeptide/  morillo_np_male  derived male NP connectome (np_male db)
 //
 // This writes, into src/server/populate-db/raw-data/:
 //   neurons.json                 union of all projections' cells (raw-data cell schema)
@@ -122,6 +123,20 @@ for (const ds of maDatasets) {
   console.log(`connections/${ds.id}.json: ${raw.length} monoamine connections`);
 }
 
+// --- Male neuropeptide (derived, Morillo 2025) predicted network ---------------------------------
+// The male counterpart to the hermaphrodite neuropeptide network: its own 'np_male' viz database
+// (one dataset) on the shared 'np' datatype, carrying male-specific neurons. One raw-data file.
+const maleNpDatasets = readJson(need(path.join(KG_OUT, 'neuron-graph-male-neuropeptide/datasets.json')));
+const maleNpConns = readJson(need(path.join(KG_OUT, 'neuron-graph-male-neuropeptide/connections.json')));
+for (const ds of maleNpDatasets) {
+  const raw = maleNpConns
+    .filter(c => (c.synapses[ds.id] || 0) > 0)
+    .map(c => toRawConnection(c, ds.id));
+  const out = path.join(RAW, 'connections', `${ds.id}.json`);
+  fs.writeFileSync(out, JSON.stringify(raw) + '\n');
+  console.log(`connections/${ds.id}.json: ${raw.length} male neuropeptide connections`);
+}
+
 // --- Viz-only 'Pharynx + inferred muscle coupling' dataset --------------------------------------
 // cook_2020_pharynx records no muscle/marginal gap junctions (SI3, observed only). This viz-only
 // dataset unions the observed pharynx with the pharyngeal muscle/marginal gap junctions from Cook
@@ -155,6 +170,7 @@ const existing = readJson(datasetsPath).filter(
     !d.id.startsWith('cook_') &&
     !d.id.startsWith('yim_') &&
     !d.id.startsWith('ripoll_') &&
+    !d.id.startsWith('morillo_') &&
     d.id !== COUPLED
 );
 const maleDs = readJson(need(path.join(KG_OUT, 'neuron-graph-male/datasets.json')));
@@ -168,11 +184,13 @@ const coupledDs = {
     + 'Visualization only - not part of the observed knowledge graph.'
 };
 const datasets = [
-  ...existing, ...maleDs, ...pharynxDs, ...dauerDs, coupledDs, ...npDatasets, ...maDatasets
+  ...existing, ...maleDs, ...pharynxDs, ...dauerDs, coupledDs,
+  ...npDatasets, ...maDatasets, ...maleNpDatasets
 ];
 fs.writeFileSync(datasetsPath, JSON.stringify(datasets, null, 2) + '\n');
 console.log(
   `datasets.json: ${datasets.length} datasets ` +
     `(+${maleDs.length + pharynxDs.length} Cook, +${dauerDs.length} dauer, ` +
-    `+${npDatasets.length} neuropeptide, +${maDatasets.length} monoamine)`
+    `+${npDatasets.length} neuropeptide, +${maDatasets.length} monoamine, ` +
+    `+${maleNpDatasets.length} male neuropeptide)`
 );
