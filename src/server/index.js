@@ -1,4 +1,5 @@
 const http = require('http');
+const https = require('https');
 const path = require('path');
 const fs = require('fs');
 const process = require('process');
@@ -13,10 +14,13 @@ const logger = require('./logger');
 const routes = require('./routes');
 const db = require('./db/');
 
-const { PORT, USER, PASSWORD } = require('./config');
+const { PORT, USER, PASSWORD, HTTPS_KEY, HTTPS_CERT } = require('./config');
 
 const app = express();
-const server = http.createServer(app);
+const tlsOptions = HTTPS_KEY
+  ? { key: fs.readFileSync(HTTPS_KEY), cert: fs.readFileSync(HTTPS_CERT) }
+  : null;
+const server = tlsOptions ? https.createServer(tlsOptions, app) : http.createServer(app);
 
 // compress json requests using g-zip
 app.use(compression());

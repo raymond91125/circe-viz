@@ -7,10 +7,20 @@ const options = ini.parse(
 );
 const { port, auth_user, auth_password } = options.http_server;
 
+// HTTPS is opt-in: set both to PEM paths to serve over TLS instead of plain HTTP.
+// Same variable names as agr_ui's dev server, so one cert setup serves both.
+const HTTPS_KEY = process.env.DEV_HTTPS_KEY || '';
+const HTTPS_CERT = process.env.DEV_HTTPS_CERT || '';
+if (!HTTPS_KEY !== !HTTPS_CERT) {
+  throw new Error('DEV_HTTPS_KEY and DEV_HTTPS_CERT must be set together');
+}
+
 const userVars = {
   PORT: parseInt(port),
   USER: auth_user,
-  PASSWORD: auth_password
+  PASSWORD: auth_password,
+  HTTPS_KEY,
+  HTTPS_CERT
 };
 
 
