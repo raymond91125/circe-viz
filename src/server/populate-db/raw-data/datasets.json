@@ -330,5 +330,14 @@
     "visualTime": 50,
     "description": "Predicted monoamine (aminergic) connectome, Ripoll-Sánchez et al. 2023 (Neuron 111:3570-3589); receptor pairs from Bentley et al. 2016. Extrasynaptic — not observed synapses.",
     "datatypes": "ma"
+  },
+  {
+    "id": "morillo_np_male",
+    "name": "Morillo 2025 (male NP, predicted)",
+    "type": "np_male",
+    "time": 50,
+    "visualTime": 50,
+    "description": "Predicted male long-range neuropeptidergic connectome — the male counterpart to the Ripoll-Sánchez 2023 hermaphrodite network, derived from the Morillo et al. 2025 male expression atlas (PMID 40682776) over the Beets et al. 2023 NPP-GPCR pairs. Carries male-specific neurons. Extrasynaptic — not observed synapses.",
+    "datatypes": "np"
   }
 ]
