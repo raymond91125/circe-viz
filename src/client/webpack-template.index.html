@@ -87,6 +87,7 @@
                 <div id="np_sr">Neuropeptide, short range (predicted)</div>
                 <div id="np_mr">Neuropeptide, mid range (predicted)</div>
                 <div id="np_lr">Neuropeptide, long range (predicted)</div>
+                <div id="np_male">Neuropeptide, male, long range (predicted)</div>
                 <div id="monoamine">Monoamine (predicted)</div>
               </div>
             </div>
@@ -487,6 +488,21 @@
               range &mdash; nested subsets differing in how far a peptide is assumed to reach; they
               are off by default and picked from the database dropdown.
             </div>
+            <h2>Male neuropeptide connectome
+              <span class="source-flag">predicted</span></h2>
+            <div class="p">
+              The <b>male</b> counterpart to the neuropeptide network above (the "Neuropeptide, male
+              (predicted)" database). Built the same way &mdash; a directed edge means the source
+              expresses a neuropeptide whose cognate GPCR is expressed by the target, for a
+              deorphanized NPP&ndash;GPCR pair
+              (<a href="https://doi.org/10.1016/j.celrep.2023.113058" target="_blank">Beets et al.,
+              2023</a>) &mdash; but over <b>male</b> single-nucleus expression from
+              <a href="https://pubmed.ncbi.nlm.nih.gov/40682776/" target="_blank">Morillo et al.,
+              2025</a> instead of hermaphrodite CeNGEN, so it carries the male-specific neurons
+              (CEM, HOA/HOB, spicule and ray neurons) the hermaphrodite network cannot. Long-range
+              model only; drawn dashed amber like the other predicted neuropeptide edges, off by
+              default. <em>Not</em> observed synapses.
+            </div>
             <h2>Ripoll-S&aacute;nchez et al., 2023, monoamine connectome
               <span class="source-flag">predicted</span></h2>
             <div class="p">
@@ -639,6 +655,10 @@
               <div data-dataset="ripoll_2023_np_sr">Neuropeptide, short range (predicted)</div>
               <div data-dataset="ripoll_2023_np_mr">Neuropeptide, mid range (predicted)</div>
               <div data-dataset="ripoll_2023_np_lr">Neuropeptide, long range (predicted)</div>
+            </div>
+            <h2>Morillo et al., 2025 (male neuropeptide, predicted)</h2>
+            <div class="p download-dataset">
+              <div data-dataset="morillo_np_male">Neuropeptide, male, long range (predicted)</div>
             </div>
             <h2>Ripoll-S&aacute;nchez et al., 2023 (monoamine, predicted)</h2>
             <div class="p download-dataset">
