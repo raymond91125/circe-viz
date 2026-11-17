@@ -1,5 +1,6 @@
 const http = require('http');
 const https = require('https');
+const net = require('net');
 const path = require('path');
 const fs = require('fs');
 const process = require('process');
@@ -20,7 +21,37 @@ const app = express();
 const tlsOptions = HTTPS_KEY
   ? { key: fs.readFileSync(HTTPS_KEY), cert: fs.readFileSync(HTTPS_CERT) }
   : null;
-const server = tlsOptions ? https.createServer(tlsOptions, app) : http.createServer(app);
+
+// With TLS on, plain-HTTP requests to the same port are redirected to https:// rather than
+// dropped. The listener sniffs each connection's first byte: 0x16 is a TLS handshake record
+// and goes to the HTTPS server; anything else is plain HTTP and gets a 308 to the same URL.
+const redirectToHttps = (req, res) => {
+  const host = req.headers.host;
+  if (!host) {
+    res.writeHead(400);
+    res.end('Bad Request: missing Host header');
+    return;
+  }
+  // 308 (not 301) so non-GET requests keep their method and body.
+  res.writeHead(308, { Location: `https://${host}${req.url}` });
+  res.end();
+};
+
+const sniffProtocol = (tlsServer, httpServer) =>
+  net.createServer(socket => {
+    // Don't let a client reset before its first byte crash the process.
+    socket.on('error', () => socket.destroy());
+    socket.once('data', chunk => {
+      socket.pause();
+      socket.unshift(chunk);
+      (chunk[0] === 0x16 ? tlsServer : httpServer).emit('connection', socket);
+      process.nextTick(() => socket.resume());
+    });
+  });
+
+const server = tlsOptions
+  ? sniffProtocol(https.createServer(tlsOptions, app), http.createServer(redirectToHttps))
+  : http.createServer(app);
 
 // compress json requests using g-zip
 app.use(compression());
