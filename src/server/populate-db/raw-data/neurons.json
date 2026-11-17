@@ -3852,6 +3852,15 @@
     "intail": true
   },
   {
+    "name": "PVS",
+    "classes": "PVS",
+    "nt": "u",
+    "typ": "i",
+    "emb": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
     "name": "PVT",
     "classes": "PVT",
     "nt": "u",
@@ -3859,6 +3868,15 @@
     "emb": true,
     "inhead": true,
     "intail": true
+  },
+  {
+    "name": "PVU",
+    "classes": "PVU",
+    "nt": "u",
+    "typ": "i",
+    "emb": false,
+    "inhead": false,
+    "intail": false
   },
   {
     "name": "PVV",

@@ -2502,6 +2502,15 @@
     "intail": false
   },
   {
+    "name": "excgl",
+    "class": "exc",
+    "type": "u",
+    "neurotransmitter": "n",
+    "embryonic": true,
+    "inhead": true,
+    "intail": false
+  },
+  {
     "name": "exc_cell",
     "class": "exc_cell",
     "type": "",
@@ -2517,15 +2526,6 @@
     "neurotransmitter": "u",
     "embryonic": false,
     "inhead": false,
-    "intail": false
-  },
-  {
-    "name": "excgl",
-    "class": "exc",
-    "type": "u",
-    "neurotransmitter": "n",
-    "embryonic": true,
-    "inhead": true,
     "intail": false
   },
   {
@@ -3852,6 +3852,15 @@
     "intail": true
   },
   {
+    "name": "PVS",
+    "class": "PVS",
+    "type": "i",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
+  },
+  {
     "name": "PVT",
     "class": "PVT",
     "type": "in",
@@ -3859,6 +3868,15 @@
     "embryonic": true,
     "inhead": true,
     "intail": true
+  },
+  {
+    "name": "PVU",
+    "class": "PVU",
+    "type": "i",
+    "neurotransmitter": "u",
+    "embryonic": false,
+    "inhead": false,
+    "intail": false
   },
   {
     "name": "PVV",

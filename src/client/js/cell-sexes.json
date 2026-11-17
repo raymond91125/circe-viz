@@ -1282,12 +1282,10 @@
   "male"
  ],
  "PVPL": [
-  "hermaphrodite",
-  "male"
+  "hermaphrodite"
  ],
  "PVPR": [
-  "hermaphrodite",
-  "male"
+  "hermaphrodite"
  ],
  "PVQL": [
   "hermaphrodite",
@@ -1301,8 +1299,14 @@
   "hermaphrodite",
   "male"
  ],
+ "PVS": [
+  "male"
+ ],
  "PVT": [
   "hermaphrodite",
+  "male"
+ ],
+ "PVU": [
   "male"
  ],
  "PVV": [
