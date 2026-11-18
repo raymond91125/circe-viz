@@ -114,7 +114,10 @@ const KG_DATASET_LABELS = {
   ripoll_2023_neuropeptide_sr: 'Ripoll-Sánchez 2023 (NP short-range)',
   ripoll_2023_neuropeptide_mr: 'Ripoll-Sánchez 2023 (NP mid-range)',
   ripoll_2023_neuropeptide_lr: 'Ripoll-Sánchez 2023 (NP long-range)',
-  ripoll_2023_monoamine: 'Ripoll-Sánchez 2023 (monoamine)'
+  ripoll_2023_monoamine: 'Ripoll-Sánchez 2023 (monoamine)',
+  brittin_2021_l4_contactome: 'Brittin 2021 contactome (L4)',
+  brittin_2021_adult_contactome: 'Brittin 2021 contactome (adult)',
+  yim_2024_dauer_contactome: 'Yim 2024 contactome (dauer)'
 };
 /* eslint-enable camelcase */
 
@@ -127,6 +130,7 @@ const KG_RELATIONS = [
   ['o', 'Chemical output'],
   ['i', 'Chemical input'],
   ['e', 'Gap junctions'],
+  ['adj', 'Membrane contact (nerve ring)'],
   ['fo', 'Functional output'],
   ['fi', 'Functional input'],
   ['npo', 'Neuropeptide output (predicted)'],
@@ -140,6 +144,7 @@ const KG_REL_META = {
   o: ['chemical', 'outgoing'],
   i: ['chemical', 'incoming'],
   e: ['gap junction', 'undirected'],
+  adj: ['membrane contact (nerve ring)', 'undirected'],
   fo: ['functional', 'outgoing'],
   fi: ['functional', 'incoming'],
   npo: ['neuropeptidergic (predicted)', 'outgoing'],
@@ -358,7 +363,10 @@ class InfoView extends BaseView {
           '<div class="kg-note">All partners across every dataset in the knowledge graph, ' +
           'unfiltered by this view\'s threshold. Hover a partner for datasets and weights; for ' +
           'predicted neuropeptide or monoamine partners the badge is the number of mediating ' +
-          'receptor pairs and the hover lists them (ligand/monoamine → receptor).</div>' +
+          'receptor pairs and the hover lists them (ligand/monoamine → receptor). ' +
+          'Membrane contact is physical adjacency (the contactome), weight = contact area; it ' +
+          'is scored in the nerve ring only, so its absence does not mean two cells never ' +
+          'touch.</div>' +
           groups.join('')
       )
       .show();
